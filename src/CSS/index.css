@@ -3,4 +3,63 @@
     height: 700px;
 
 }
- */
+
+
+
+
+
+
+
+
+
+
+ /*---------- PERSONALIZAÇÃO ÁREA FOOTER ---------- */
+
+footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.copyright {
+    background-color: #1a252f;
+}
+
+a.btn-social {
+    border-radius: 100%;
+    display: inline-flex;
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+
+
+  /* // X-Small devices (portrait phones, less than 576px) */
+  /* // No media query for `xs` since this is the default in Bootstrap */
+  
+  /* // Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {  }
+  
+  /* // Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) { 
+    section {
+        background-color: yellow;
+    }
+
+   }
+  
+  /* // Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {  }
+  
+  /* // X-Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {  }
+  
+  /* // XX-Large devices (larger desktops, 1400px and up) */
+  @media (min-width: 1400px) {  }
+  
+  
