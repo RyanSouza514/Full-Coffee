@@ -4,16 +4,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
-.cabecalho{
-    height: 3.5rem;
-    background-color: blanchedalmond;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}  
+body{
+    background-color: bisque;
+}
 
 main{
     position: absolute;
@@ -22,6 +15,26 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cabecalho{
+    height: 3.5rem;
+    background-color: rgb(252, 210, 148);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+h3{
+    border: 1px solid red;
+}
+
+.nav-itens{
+    border: 1px solid rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 900px;
 }
 
 .tela-register{
@@ -38,3 +51,6 @@ main{
     position: relative;
     left: 42px;
 }
+
+
+
