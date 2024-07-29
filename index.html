@@ -15,7 +15,7 @@
     
     <!--ESTILIZAÇÃO PERSONALIZADA-->
     <link rel="stylesheet" href="src/assets/css/index.css">
-    <link rel="stylesheet" href="src/assets/CSS/generic/normalize.css">
+    <link rel="stylesheet" href="src/assets/CSS/generic/normalize.css"> 
 
 </head>
 <body>
@@ -143,6 +143,109 @@
       </div>
       
     </div>
+
+    <!-- Iniciando CARDAPIO -->
+    <section class="container my-4">
+
+        <!-- Barra de Pesquisa -->
+        <div class="form-group">
+            <label for="search" class="sr-only">Pesquisar</label>
+            <input type="text" id="search" class="form-control" placeholder="pesquisa">
+        </div>
+
+        <!-- Navegação -->
+        <nav class="nav nav-pills nav-justified mb-3">
+            <a class="nav-link active" href="#cafes">
+                <span class="icon">&#x2615;</span>
+                <span class="text">Cafés</span>
+            </a>
+            <a class="nav-link" href="#chas">
+                <span class="icon">&#x1F375;</span>
+                <span class="text">Chás</span>
+            </a>
+            <a class="nav-link" href="#sobremesas">
+                <span class="icon">&#x1F370;</span>
+                <span class="text">Sobremesas</span>
+            </a>
+            <a class="nav-link" href="#bebidas">
+                <span class="icon">&#x1F37A;</span>
+                <span class="text">Bebidas</span>
+            </a>
+        </nav>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="cafes-quentes-tab" data-toggle="tab" href="#cafes-quentes" role="tab" aria-controls="cafes-quentes" aria-selected="true">Cafés quentes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="cafes-frios-tab" data-toggle="tab" href="#cafes-frios" role="tab" aria-controls="cafes-frios" aria-selected="false">Cafés frios</a>
+            </li>
+        </ul>
+
+        <!-- Conteúdo dos Tabs -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="cafes-quentes" role="tabpanel" aria-labelledby="cafes-quentes-tab">
+                <!-- Menu -->
+                <section class="menu">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">ESPRESSO <span class="text-muted">50ml</span></h5>
+                                    <p class="card-text"><strong>R$ 7,00</strong></p>
+                                    <p class="card-text">Potente e encorpado. 60ml</p> 
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="src/assets/img/img-cardapio/imagem-1.png" class="card-img" alt="Espresso">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="cafesTabContent">
+                        <div class="tab-pane fade show active" id="cafes" role="tabpanel" aria-labelledby="cafes-tab">
+                            <div class="card my-3">
+                                <div class="row no-gutters">
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ESPRESSO <span class="text-muted">50ml</span></h5>
+                                            <p class="card-text"><strong>R$ 7,00</strong></p>
+                                            <p class="card-text">Potente e encorpado. 60ml</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="src/assets/img/img-cardapio/imagem-2.png" class="card-img" alt="Expresso">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="chásTabContent">
+                            <div class="tab-pane fade show active" id="chas" role="tabpanel" aria-labelledby="chas-tab">
+                                <div class="card my-3">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">ESPRESSO <span class="text-muted">50ml</span></h5>
+                                                <p class="card-text"><strong>R$ 7,00</strong></p>
+                                                <p class="card-text">Potente e encorpado. 60ml</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="src/assets/img/img-cardapio/imagem-3.png" class="card-img" alt="Expresso">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="tab-pane fade" id="cookies" role="tabpanel" aria-labelledby="cookies-tab">
+                </section>
+            </div>
+            <div class="tab-pane fade" id="cafes-frios" role="tabpanel" aria-labelledby="cafes-frios-tab">
+                <!-- Conteúdo para Cafés frios -->
+            </div>
+        </div>
+
+    </section>
+    <!-- FINAL CARDAPIO -->
 
 
     <!-- Iniciando Seção Contato -->
