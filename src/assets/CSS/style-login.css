@@ -1,0 +1,11 @@
+.gradient-personalizado {
+  /* Substituto para navegadores antigos */
+  /* background: #dcb26d; */
+  background: #8e8e4d;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, rgb(220, 178, 109), rgb(142, 142, 77));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, rgb(220, 178, 109), rgb(142, 142, 77));
+  }
