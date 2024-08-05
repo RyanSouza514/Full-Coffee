@@ -1,3 +1,54 @@
+ /*---Personalizando o body---*/
+ @import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Trykker&display=swap');
+ body{
+    background-color: #DCB26D;
+ }
+ 
+    /*Estilizando fontes*/
+    .titulo{
+    
+        font-family: "Maitree", serif;
+        font-weight: 500;
+        font-style: normal;      
+        color: #5A2C0F;
+        }        
+          
+    .paragrafo {
+        
+            font-family: "Trykker", serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #0D0D0D;
+          }
+    /*Fim estilo fontes*/
+
+    /*--- Estilizando seção Quem somos---*/
+    .linha {
+        height: 5px;
+        background-color: #0D0D0D;
+        border-radius: 5px;
+        width: 40%;
+
+
+    }
+    
+
+
+
+
+
+
+    /*---Fim estilo seção Quem somos---*/
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
  /*---------- PERSONALIZAÇÃO IMG CARROSEL *TEMP* ---------- */ 
  
  img{
@@ -11,6 +62,9 @@
     width: 300px;
     height: 200px;
 }
+
+
+
 
 
 
