@@ -2,7 +2,6 @@ let btn = document.querySelector('#verSenha');
 
 
 
-
 btn.addEventListener('click', ()=> {
     let inputSenha = document.querySelector('#senha-login')
 
@@ -12,3 +11,27 @@ btn.addEventListener('click', ()=> {
         inputSenha.setAttribute('type', 'password')
     }
 })
+
+
+// -- Função para verificar se campo de email foi preenchido
+function EnviarEmailRecuperacao() {
+    
+    let inputEmailModal = document.getElementById("email-login-recupera");
+
+    let emailValue = inputEmailModal.value.trim();
+
+    if (emailValue === "") {
+        alert("Por favor, digite seu e-mail.");
+        inputEmailModal.focus();
+
+    } else {
+        alert("Email enviado com sucesso!!");
+        inputEmailModal.value = ''; // Limpa o campo
+
+        let modal = bootstrap.Modal.getInstance('#recuperacao-modal');
+            // Fecha o modal
+            if (modal) {
+                modal.hide();
+            }
+    }
+}

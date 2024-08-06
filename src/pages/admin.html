@@ -49,8 +49,8 @@
                         <i id="verSenha" class="bi bi-eye input-group-text"></i>
                     </div>
 
-                    <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">Esqueceu sua senha?</a></p>
-      
+                    <p class="small mb-4 pb-lg-2" data-bs-toggle="modal" data-bs-target="#recuperacao-modal"><a class="text-white-50" href="#!">Esqueceu sua senha?</a></p>      
+                    
                     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Logar</button>
       
                   </div>
@@ -67,7 +67,26 @@
         </div>
     </main>
 
-
+    <!-- Modal: Enviar Email Recuperação Senha -->
+    <div class="modal fade" id="recuperacao-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-light  ">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Esqueceu a senha?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body"> 
+            <div class="form-floating mb-2 text-dark">
+              <input type="email" class="form-control" id="email-login-recupera" placeholder="Digite seu email...">
+              <label for="email-login-recupera">Email:</label>
+            </div>            
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="EnviarEmailRecuperacao();" class="btn btn-lg btn-primary">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--Script Personalizado-->
     <script src="../assets/JS/admin-login.js"></script>
