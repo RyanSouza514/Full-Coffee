@@ -1,0 +1,59 @@
+
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap breakpoints
+*/
+
+  /* Small devices (landscape phones, 544px and up) */
+  @media (max-width: 543.9px) {  
+    table {
+        font-size: 0.6rem;
+        }
+    .container{
+        background-color: yellow;
+        /* margin-left: -0.7rem; */
+    }
+    .mensagem-form{
+        width: 100%;
+        max-height: 90px;
+    }
+  }
+  
+  @media (min-width: 544px) {  
+    table {font-size: 0.7rem;}
+    .container{
+        background-color: rgb(0, 255, 98);
+        margin-left: -0.7rem;
+    }
+    .mensagem-form{
+        width: 100%;
+        max-height: 80px;
+    }
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {  
+    table {font-size: 0.9rem}
+
+    .mensagem-form{
+        width: 100%;
+        max-height: 100px;
+    }
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+    table {font-size: 1.0rem}
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {  
+    table {font-size: 1.1rem;}
+  }
