@@ -1,0 +1,94 @@
+@import url(settings/variables.css);
+
+/*---------- PERSONALIZAÇÃO ÁREA FOOTER ---------- */
+.gradient-personalizado {
+  /* Substituto para navegadores antigos */
+  background: var(--bg-verdeOliva);
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, var(--bg-verdeOliva), var(--bg-Creme));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, var(--bg-verdeOliva), var(--bg-Creme));
+}
+
+
+/*---------- PERSONALIZAÇÃO ÁREA MENU NAVEGAÇÃO DASHBORD ---------- */
+/* .bg-menu-nav { ### Se quiser alterar o cor do MENU navegação
+  background:  #6F4E37;
+} */
+
+.nav-link {
+  color: rgb(255, 255, 255);
+}
+
+.nav-link:hover {
+  color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+/*
+####################################################
+             M E D I A  Q U E R I E S
+####################################################
+ ---------- BOOTSTRAP BREAKSPOINTS ---------- 
+*/
+
+  /* Menores..... */
+  @media (max-width: 543.9px) {  
+    
+    table {
+        font-size: 0.6rem;
+    }
+
+    .mensagem-form{
+        width: 100%;
+        max-height: 90px;
+    }
+  }
+  /* Small devices (landscape phones, 544px and up) */
+  @media (min-width: 544px) {  
+
+    table {
+      font-size: 0.7rem;
+    }
+    
+    .mensagem-form{
+        width: 100%;
+        max-height: 80px;
+    }
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+
+    table {
+      font-size: 0.9rem
+    }
+
+    .mensagem-form{
+        width: 100%;
+        max-height: 100px;
+    }
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+
+    table {
+      font-size: 1.0rem
+    }
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {  
+    
+    table{
+      font-size: 1.1rem;
+    }
+  }

@@ -1,17 +1,41 @@
 /*
 CRIAR AS ROOT DE PERSONALIZAÇÃO DO SISTEMA
-
 */
 
 :root {
-    --background-fundo1-adm: #dcb26d;
-    --background-fundo2-adm: #8e8e4d;
-    --modelo-cor-03: #a2570d;
-    --modelo-cor-04: #5a2c0f;
-    --modelo-cor-05: #0d0d0d;
+  --background-fundo1-adm: #dcb26d;
+  --background-fundo2-adm: #8e8e4d;
+
+  --bg-verdeOliva: #808000;
+  --bg-Creme: #FFFDD0;
+
+
+  --modelo-cor-03: #a2570d;
+  --modelo-cor-04: #5a2c0f;
+  --modelo-cor-05: #0d0d0d;
 
 
 
-
-  }
+  /* Tons de Marrom e Bege: */
+  --MarromEscuro: #4B3621;
+  --BegeClaro: #F5F5DC;
+  --MarromClaro: #D2B48C;
+  --Branco: #FFFFFF;
+  --VerdeMenta: #98FF98;
   
+  /* Tons de Café e Creme: */
+  
+  --Café: #6F4E37;
+  --Creme: #FFFDD0;
+  --Caramelo: #C68E17;
+  --Branco: #FFFFFF;
+  --VerdeMusgo: #8A9A5B;
+
+  /* Tons de Verde e Marrom: */
+  
+  --VerdeMusgo: #556B2F;
+  --MarromChocolate: #8B4513;
+  --VerdeOliva: #808000;
+  --Branco: #FFFFFF;
+  --MarromClaro: #D2B48C;
+}
