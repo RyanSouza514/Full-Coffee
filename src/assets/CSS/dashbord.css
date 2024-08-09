@@ -42,7 +42,8 @@
   /* Menores..... */
   @media (max-width: 543.9px) {  
     
-    table {
+    /* ---- PERSONALIZAÇÃO TABELA MENSAGEM ----  */
+    .table-font-size {
         font-size: 0.6rem;
     }
 
@@ -50,11 +51,19 @@
         width: 100%;
         max-height: 90px;
     }
+
+    /* ---- PERSONALIZAÇÃO TELA-CATEGORIAS -> TABELA DE DADOS ----  */
+    .altura-table {
+      max-height: 450px;
+    }
   }
+
+
   /* Small devices (landscape phones, 544px and up) */
   @media (min-width: 544px) {  
 
-    table {
+    /* ---- PERSONALIZAÇÃO TABELA MENSAGEM ----  */
+    .table-font-size {
       font-size: 0.7rem;
     }
     
@@ -64,10 +73,12 @@
     }
   }
 
+  
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
 
-    table {
+    /* ---- PERSONALIZAÇÃO TABELA MENSAGEM ----  */
+    .table-font-size {
       font-size: 0.9rem
     }
 
@@ -75,20 +86,34 @@
         width: 100%;
         max-height: 100px;
     }
+
+    /* ---- PERSONALIZAÇÃO TELA-CATEGORIAS -> TABELA DE DADOS ----  */
+    .altura-table {
+      max-height: 850px;
+    }
   }
+
 
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) { 
 
-    table {
+    /* ---- PERSONALIZAÇÃO TABELA MENSAGEM ----  */
+    .table-font-size {
       font-size: 1.0rem
+    }
+    
+    /* ---- PERSONALIZAÇÃO TELA-CATEGORIAS -> TABELA DE DADOS ----  */
+    .altura-table {
+      max-height: 295px;
     }
   }
 
+
   /* Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {  
-    
-    table{
+
+    /* ---- PERSONALIZAÇÃO TABELA MENSAGEM ----  */
+    .table-font-size{
       font-size: 1.1rem;
     }
   }
