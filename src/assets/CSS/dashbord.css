@@ -26,6 +26,10 @@
   color: rgb(255, 255, 255);
 }
 
+.teste {
+  border: 1px solid red;
+}
+
 
 
 
@@ -105,6 +109,9 @@
     /* ---- PERSONALIZAÇÃO TELA-CATEGORIAS -> TABELA DE DADOS ----  */
     .altura-table {
       max-height: 295px;
+    }
+    .altura-table-sub {
+      max-height: 240px;
     }
   }
 
