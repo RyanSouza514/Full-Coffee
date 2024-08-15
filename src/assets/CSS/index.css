@@ -1,3 +1,106 @@
+ /*---Personalizando o body---*/
+ @import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Trykker&display=swap');
+ body{
+    background-color: #DCB26D;
+ }
+ 
+    /*Estilizando fontes*/
+    .titulo{
+    
+        font-family: "Maitree", serif;
+        font-weight: 500;
+        font-style: normal;      
+        color: #5A2C0F;
+        }        
+          
+    .paragrafo {
+        
+            font-family: "Trykker", serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #0D0D0D;
+          }
+    /*Fim estilo fontes*/
+
+    /*--- Estilizando seções Quem somos, Missão, Visão e Valores---*/
+    .linha {
+        height: 5px;
+        background-color: #0D0D0D;
+        border-radius: 5px;
+        width: 40%;
+    }
+    
+
+  /* ---- Imagens das Seções --*/
+
+  .img-fluid{
+    width: 500px;
+    height: 300px;
+    border: 3px solid #5A2C0F; 
+    border-radius: 10px;
+    padding: 0px; 
+  
+  }
+ 
+  /* --- Fim imagens das seções -- */
+
+   /*---Fim estilo seções Quem somos, Missão, Visão e Valores---*/
+
+  /*---Estilizando a seção Formulário --*/
+
+  /* Fontes*/
+  .formulario_titulo{
+    font-family: "Maitree", serif;
+        font-weight: 500;
+        font-style: normal;      
+        color: #DCB26D;
+  }
+.mensagem_contato{
+    font-family: "Trykker", serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #DCB26D;
+}
+
+.form-label{
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #DCB26D;
+}
+
+
+/* Fim Fontes*/
+
+/*Alterando a cor da secão formulário*/
+ #page-contato{
+  background-color: #5A2C0F;
+ }
+ /* Fim alteração cor da seção formulário*/
+ 
+ /* Estilizando o maps */
+ .mapa-embed {
+    border: 5px solid #DCB26D; /* Borda semelhante à das fotos */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 0px; /* Espaçamento interno entre o mapa e a borda */
+    margin-top: 20px; /* Espaçamento superior para afastar da section acima */
+}
+/* Fim Estilizando o maps */
+
+
+/* Personalizando o botão*/
+.btn-personalizado {
+    background-color: #DCB26D; 
+    border-color:  #5A2C0F; 
+    color: #5A2C0F; 
+}
+
+.btn-personalizado:hover {
+    background-color: #c3a05c; 
+    border-color: #c3a05c; 
+}
+ /*--- Fim Estilização seção Formulário --*/
+ 
  /*---------- PERSONALIZAÇÃO IMG CARROSEL *TEMP* ---------- */ 
  
  img{
@@ -11,26 +114,37 @@
     width: 300px;
     height: 200px;
 }
+/*Estilizando botões carrousel*/
+/* Estilo personalizado para os botões internos do carrossel */
 
+.btn-custom {
+    background-color: #5A2C0F;
+    border-color: #5A2C0F; 
+    color: #DCB26D; 
+    border: 1px solid; 
+    opacity: 1; 
+}
 
-
-
-
-
-
+.btn-custom:hover {
+    background-color: #c3a05c; 
+    border-color: #5A2C0F; 
+    
+}
+/*Fim Estilizando botões carrousel*/
 
 
  /*---------- PERSONALIZAÇÃO ÁREA FOOTER ---------- */
+ /* Alterações de cores footer*/
 
 footer {
     padding-top: 5rem;
     padding-bottom: 5rem;
-    background-color: #2c3e50;
+    background-color: #0D0D0D;
     color: #fff;
 }
 
 .copyright {
-    background-color: #1a252f;
+    background-color: #0D0D0D;
 }
 
 a.btn-social {
