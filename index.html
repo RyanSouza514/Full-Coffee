@@ -14,139 +14,188 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <!--ESTILIZAÇÃO PERSONALIZADA-->
+    <link rel="stylesheet" href="src/assets/CSS/style.css">
     <link rel="stylesheet" href="src/assets/css/index.css">
     <link rel="stylesheet" href="src/assets/CSS/generic/normalize.css"> 
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    
+
 
 </head>
 <body>
-
-    <!-- Iniciando Menu Navegação -->
-    <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <!---Iniciando NavBar-->
+<!-- Iniciando NavBar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="src/assets/img/Logotipo Full Coffee.svg" alt="Logo Full Coffee">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link ms-3" href="#">Home</a>
-              </li>
-              <li class="nav-item ms-3">
-                <a class="nav-link" href="#">Sobre</a>
-              </li>
-              <li class="nav-item ms-3">
-                <a class="nav-link" href="#">Cardápio</a>
-              </li>
-              <li class="nav-item ms-3">
-                <a class="nav-link" href="#page-contato">Contato</a>
-              </li>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0 me-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Quem-Somos">Quem Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#destaques">Destaques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#page-contato">Contato</a>
+                </li>
             </ul>
-          </div>
+            <form class="d-flex align-items-center">
+                <a href="#page-cardapio"></a><button class="btn btn-outline-success" type="button">Cardápio</button>
+            </form>
         </div>
-        </nav>
     </div>
-    <!-- Final Menu Navegação -->
+</nav>
+
+
+
+<!---Finalizando Navbar-->
+
 
 
     
-  <!-- Carrousel de Imagens -->
-  <div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="src/assets/img/img-descubra agora.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block mb-5">
-          <button type="button" class="btn btn-custom btn-lg pe-4 ps-4 rounded-pill">Descubra Agora</button>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="src/assets/img/img - carrousel 1.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block mb-5">
-          <button type="button" class="btn btn-custom btn-lg pe-4 ps-4 rounded-pill">Faça seu pedido</button>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="src/assets/img/carrousel 1.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block mb-5">
-          <button type="button" class="btn btn-custom btn-lg pe-4 ps-4 rounded-pill">Experiência Única</button>            
-        </div>
+      <!-- Carrousel com Vídeo -->
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <video class="d-block w-100" autoplay loop muted>
+        <source src="src/assets/img/video-carrousel.mp4" type="video/mp4">
+        Seu navegador não suporta o vídeo.
+      </video>
+      <div class="carousel-caption d-none d-md-block mb-5">
+        <button type="button" class="btn btn-custom btn-lg pe-4 ps-4 rounded-pill">Descubra Agora</button>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+  </div>
+  <!-- Indicadores do carrossel -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+  </div>
 </div>
-<!-- FINAL Carrousel de Imagens -->
+      <!-- FINAL Carrousel com Vídeo -->
 
+              <!-- Seção Nossos Destaques -->
+        <div id="destaques" class="container mt-5">
+          <!-- Título da seção -->
+          <div class="text-center mb-4">
+            <h2 class="titulo">Nossos Destaques</h2>
+          </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Card 1 -->
+          <div class="col">
+            <div class="card custom-card">
+              <img src="src/assets/img/espresso.jpg" class="card-img-top custom-img" alt="Café Espresso">
+              <div class="card-body">
+                <h5 class="card-title">Espresso com "S"</h5>
+                <p class="card-text">Cada espresso é uma expressão pura de sabor, simples, mas extraordinariamente cremoso e intenso.</p>
+                <a href="#cardapio.html" class="btn btn-primary custom-btn">Ver no Cardápio</a>
+              </div>
+            </div>
+          </div>
 
-<!-- FINAL Carrousel de Imagens -->
+          <!-- Card 2 -->
+                    <!-- Card 3 -->
+          <div class="col">
+            <div class="card custom-card">
+              <img src="src/assets/img/Torta de Nozes.jpg" class="card-img-top custom-img" alt="Torta de Nozes">
+              <div class="card-body">
+                <h5 class="card-title">Crocância e Cremozidade</h5>
+                <p class="card-text">Uma torta de nozes com a combinação perfeita de crocância e cremosidade, proporcionando um prazer a cada pedaço.</p>
+                <a href="#" class="btn btn-primary custom-btn">Ver no Cardápio</a>
+              </div>
+            </div>
+          </div>
 
-
-
-      <!-- Iniciando Seção Quem Somos -->
-      <div class="container mt-5">
-
-        <div class="row"><!-- Inicio ROW Quem somos-->
-          
-          <div class="col"><!-- Inicio Sobre-->
-            
-            <h2 class="titulo">Quem Somos</h2>
-            <hr class="linha" >
-            <p class="paragrafo">Bem-vindo à <strong>Full Coffee</strong>, um lugar onde cada xícara de café é preparada com paixão e dedicação. Nossa missão é proporcionar uma experiência única para nossos clientes, oferecendo cafés de alta qualidade e um ambiente acolhedor. Além de nossa seleção cuidadosamente escolhida de grãos, nossos baristas são treinados para garantir que cada bebida seja uma obra de arte, desde o expresso perfeito até as criações mais elaboradas. Venha e desfrute de momentos especiais em um espaço onde o aroma do café fresco se mistura com conversas inspiradoras e sorrisos calorosos.</p>
-          </div><!-- Final Sobre-->
-  
-          <div class="col" ><!-- Inicio Imagem Sobre-->
-            <img src="src/assets/img/img-sobre.jpg" class="img-fluid" alt="...">
-          </div><!-- Final Imagem Sobre-->
+          <!-- Card 3 -->
+          <div class="col">
+            <div class="card custom-card">
+              <img src="src/assets/img/smootievegano.jpg" class="card-img-top custom-img" alt="Smootie Vegano">
+              <div class="card-body">
+                <h5 class="card-title"> Frescor Vegano</h5>
+                <p class="card-text">Um smoothie vegano de kiwi e aveia, uma explosão de frescor e nutrição em cada gole, perfeito,saudável e delicioso.</p>
+                <a href="#" class="btn btn-primary custom-btn">Ver no Cardápio</a>
+              </div>
+            </div>
+          </div>
         </div>
-  
-        <div class="row"><!-- Inicio ROW Missão, Visão-->
-          
-          <div class="col"><!-- Inicio Imagem Missão-->
-              <img src="src/assets/img/missão e visao.jpg" class="img-fluid" alt="...">
-          </div><!-- Final imagem missão -->
-  
-          <div class="col" ><!-- Inicio Missão,visão-->
-            <h2 class="titulo">Missão</h2>
-            <hr class="linha" >
-            <p class="paragrafo">Nossa missão é oferecer cafés excepcionais e um atendimento impecável, criando um espaço onde nossos clientes se sintam em casa e possam desfrutar de momentos especiais.</p>
-  
-            <h2 class="titulo" >Visão</h2>
-            <hr class="linha">
-            <p class="paragrafo">Nossa visão é ser reconhecida como a melhor cafeteria da região, conhecida pela qualidade dos nossos produtos, pela inovação no cardápio e pela excelência no atendimento ao cliente.</p>
-          </div><!-- Final Missão, Visão-->
-        </div>
-  
-        <div class="row"><!-- Inicio ROW Valores-->
-  
-          <div class="col" ><!-- Inicio Valores-->
-            <h2 class="titulo">Valores</h2>
-            <hr class="linha">
-            <p class="paragrafo">Qualidade: Utilizamos apenas os melhores grãos de café e ingredientes frescos.</p>
-            <p class="paragrafo">Atendimento: Valorizamos cada cliente e nos esforçamos para proporcionar um serviço amigável e atencioso.</p>
-            <p class="paragrafo">Sustentabilidade: Priorizamos práticas sustentáveis, desde a seleção de nossos fornecedores até a gestão dos resíduos.</p>
-            <p class="paragrafo">Paixão: Amamos o que fazemos e isso se reflete em cada detalhe do nosso trabalho.</p>
-          </div><!-- Final Valores-->
-  
-          <div class="col"><!-- Inicio Imagem valores-->
-            <img src="src/assets/img/img-valores.jpg" class="img-fluid" alt="...">
-          </div><!-- Final imagem valores -->
-  
-        </div>
-        
       </div>
+      <!--Fim Iniciando cards de Destaques-->
+
+
+    
+    <!-- Iniciando Seção Quem Somos -->
+  <div id="Quem-Somos" class="container mt-5">
+
+  <div class="row"><!-- Inicio ROW Quem somos-->
+
+    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100"><!-- Inicio Quem Somos-->
+      <h2 class="titulo">Quem Somos</h2>
+      <hr class="linha">
+      <p class="paragrafo">
+        Bem-vindo à <strong>Full Coffee</strong>, um lugar onde cada xícara de café é preparada com paixão e dedicação. Nossa missão é proporcionar uma experiência única para nossos clientes, oferecendo cafés de alta qualidade e um ambiente acolhedor. Além de nossa seleção cuidadosamente escolhida de grãos, nossos baristas são treinados para garantir que cada bebida seja uma obra de arte, desde o expresso perfeito até as criações mais elaboradas. Venha e desfrute de momentos especiais em um espaço onde o aroma do café fresco se mistura com conversas inspiradoras e sorrisos calorosos.Acreditamos que cada visita deve ser especial, e nos esforçamos para que você se sinta parte de nossa família. Com um ambiente que mistura elegância e conforto, nossa cafeteria é o local ideal para relaxar e desfrutar de um café de excelência.
+      </p>
+    </div><!-- Final Quem Somos-->
+
+    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200"><!-- Inicio Imagem Quem Somos-->
+      <img src="src/assets/img/img-sobre.jpg" class="img-fluid" alt="Imagem do Interior da Cafeteria Full Coffee">
+    </div><!-- Final Imagem Sobre-->
+    </div><!-- Fim ROW Quem somos -->
+
+    </div><!-- Fim container -->
+
+
   
+      <!--Iniciando a Seção Porque escolher a Full Coffee-->
+        <section id="why-us" class="why-us section">
+          <div class="container section-title" data-aos="fade-up">
+      <h2 class="titulo">Nossa Essência</h2>
+      <div><span>Na <strong>Full Coffee</strong>, cada grão e xícara refletem nosso compromisso em oferecer uma experiência única, onde o café é mais que uma bebida; é uma arte e uma paixão que compartilhamos com nossos clientes.</span> <span class="description-title"></span>
+      </div>
+      </div>
+
+      <div class="container">
+    <div class="row gy-4">
+        <!-- Card 1 -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+                <span>01</span>
+                <h4><a href="" class="stretched-link">Missão</a></h4>
+                <p>Nossa missão é oferecer cafés excepcionais e um atendimento impecável, criando um espaço onde nossos clientes se sintam em casa e possam desfrutar de momentos especiais.</p>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+                <span>02</span>
+                <h4><a href="" class="stretched-link">Visão</a></h4>
+                <p>Nossa visão é ser reconhecida como a melhor cafeteria da região, conhecida pela qualidade dos nossos produtos, pela inovação no cardápio e pela excelência no atendimento ao cliente.</p>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+                <span>03</span>
+                <h4><a href="" class="stretched-link">Valores</a></h4>
+                <p><strong>Qualidade:</strong> Utilizamos apenas os melhores grãos de café e ingredientes frescos.</p>
+                <p><strong>Atendimento:</strong> Valorizamos cada cliente e nos esforçamos para proporcionar um serviço amigável e atencioso.</p>
+                <p><strong>Sustentabilidade:</strong> Priorizamos práticas sustentáveis, desde a seleção de nossos fornecedores até a gestão dos resíduos.</p>
+                <p><strong>Paixão:</strong> Amamos o que fazemos e isso se reflete em cada detalhe do nosso trabalho.</p>
+            </div>
+        </div>
+    </div>
+</div>
+      <!-- Finalizando Iniciando a Seção Porque escolher a Full Coffee-->
+
 
 
     <!-- Iniciando Seção Contato -->
@@ -257,9 +306,12 @@
 
 
 
-
+<!-- AOS JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

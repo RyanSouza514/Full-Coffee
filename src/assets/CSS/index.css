@@ -1,137 +1,391 @@
- /*---Personalizando o body---*/
- @import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Trykker&display=swap');
- body{
-    background-color: #DCB26D;
- }
- 
-    /*Estilizando fontes*/
-    .titulo{
-    
-        font-family: "Maitree", serif;
-        font-weight: 500;
-        font-style: normal;      
-        color: #5A2C0F;
-        }        
-          
-    .paragrafo {
-        
-            font-family: "Trykker", serif;
-            font-weight: 400;
-            font-style: normal;
-            color: #0D0D0D;
-          }
-    /*Fim estilo fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Trykker&display=swap');
 
-    /*--- Estilizando seções Quem somos, Missão, Visão e Valores---*/
-    .linha {
-        height: 5px;
-        background-color: #0D0D0D;
-        border-radius: 5px;
-        width: 40%;
-    }
-    
 
-  /* ---- Imagens das Seções --*/
-
-  .img-fluid{
-    width: 500px;
-    height: 300px;
-    border: 3px solid #5A2C0F; 
-    border-radius: 10px;
-    padding: 0px; 
-  
-  }
- 
-  /* --- Fim imagens das seções -- */
-
-   /*---Fim estilo seções Quem somos, Missão, Visão e Valores---*/
-
-  /*---Estilizando a seção Formulário --*/
-
-  /* Fontes*/
-  .formulario_titulo{
-    font-family: "Maitree", serif;
-        font-weight: 500;
-        font-style: normal;      
-        color: #DCB26D;
-  }
-.mensagem_contato{
-    font-family: "Trykker", serif;
-            font-weight: 400;
-            font-style: normal;
-            color: #DCB26D;
+/* --------- Personalização do Body --------- */
+body {
+    background-color: #291505;
+    margin: auto;
 }
 
-.form-label{
+
+/* --------- Estilizando Títulos e Parágrafos --------- */
+.titulo {
+    font-family: "Maitree", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #c3a05c;
+}
+
+.paragrafo {
     font-family: "Trykker", serif;
     font-weight: 400;
     font-style: normal;
     color: #DCB26D;
 }
+/* --------- Fim Estilizando Títulos e Parágrafos --------- */
 
+/* Estilizando a Navbar */
 
-/* Fim Fontes*/
-
-/*Alterando a cor da secão formulário*/
- #page-contato{
-  background-color: #5A2C0F;
- }
- /* Fim alteração cor da seção formulário*/
- 
- /* Estilizando o maps */
- .mapa-embed {
-    border: 5px solid #DCB26D; /* Borda semelhante à das fotos */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 0px; /* Espaçamento interno entre o mapa e a borda */
-    margin-top: 20px; /* Espaçamento superior para afastar da section acima */
-}
-/* Fim Estilizando o maps */
-
-
-/* Personalizando o botão*/
-.btn-personalizado {
-    background-color: #DCB26D; 
-    border-color:  #5A2C0F; 
-    color: #5A2C0F; 
+.navbar-custom {
+    background-color: #291505;
 }
 
-.btn-personalizado:hover {
-    background-color: #c3a05c; 
-    border-color: #c3a05c; 
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    overflow: hidden;
+   
 }
- /*--- Fim Estilização seção Formulário --*/
- 
- /*---------- PERSONALIZAÇÃO IMG CARROSEL *TEMP* ---------- */ 
- 
- img{
-    width: 400px;
-    height: 700px;
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
 
 }
 
+.navbar-brand img {
+    width: 180px;
+    height: auto;
+    margin-right: 25px;
+    display: block;
+}
+
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+   
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.navbar-nav .nav-link {
+    font-family: "Trykker", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #DCB26D;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-link.active {
+    color: #DCB26D;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.btn-outline-success {
+    font-family: "Trykker", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #DCB26D;
+    border-color: #DCB26D;
+}
+
+.btn-outline-success:hover {
+    background-color: #DCB26D;
+    color: #291505;
+}
+
+
+
+
+/* --------- Personalização do Carrossel --------- */
+
+/* IMG Carrossel */
+img {
+    width: 600px;
+    height: 300px;
+}
 
 .card-img {
     width: 300px;
     height: 200px;
 }
-/*Estilizando botões carrousel*/
-/* Estilo personalizado para os botões internos do carrossel */
 
+/* Estilo personalizado para os botões internos do carrossel */
 .btn-custom {
     background-color: #5A2C0F;
     border-color: #5A2C0F; 
     color: #DCB26D; 
     border: 1px solid; 
     opacity: 1; 
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .btn-custom:hover {
-    background-color: #c3a05c; 
+    background-color: #DCB26D; 
     border-color: #5A2C0F; 
+}
+/* Responsividade */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        justify-content: center;
+    }
+
+    .navbar-nav {
+        margin-right: 0;
+        
+    }
+
+    .navbar-brand img {
+        width: 150px;
+    }
+}
+
+/* --------- Fim Personalização do Carrossel --------- */
+
+
+/*Estilização Cards*/
+/*Destaques*/
+
+/*Fim destaques*/
+/* Estilo para o título da seção */
+.section-title {
+    font-family: "Maitree", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #DCB26D;
+    margin-bottom: 20px;
+}
+  
+    /* Espaço abaixo do título */
+.card-title{
+    font-family: "Maitree", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #5A2C0F;
+}
+.card-text{
+    font-family: "Trykker", serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #5A2C0F;
+}
+
+.custom-card {
+    background-color: #DCB26D;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.custom-btn {
+
+        background-color: #5A2C0F;
+        border-color: 5px #DCB26D;
+        color: #DCB26D;
+        font-family: "Trykker", serif;
+        font-weight: 400;
+        font-style: normal;
+        border: 10px;
+    }
+
+    .custom-btn:hover {
+        background-color: #c3a05c;
+        border-color: #5A2C0F;
+        padding: 10px 20px;
+        
+    }
+
+
+ 
+
+/*Fim estilizando cards*/
+
+/* --------- Estilização das Seções --------- */
+/* Quem somos, Missão, Visão e Valores */
+#Quem-Somos {
+    padding: 50px a 30px ;
     
 }
-/*Fim Estilizando botões carrousel*/
 
+/* Estilo do título */
+.titulo {
+    font-family: "Maitree", serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #DCB26D;
+    margin-bottom: 20px;
+}
+
+/* Estilo da linha horizontal */
+.linha {
+    height: 5px;
+    background-color: #DCB26D;
+    border-radius: 5px;
+    width: 40%;
+    margin-bottom: 30px;
+}
+
+.paragrafo {
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #DCB26D;
+    line-height: 1.6;
+}
+
+/* Estilo das imagens */
+.img-fluid {
+    width: 550px;
+    height: 410px;
+    border: 0px solid #291505;
+    border-radius: 10px;
+    padding: 3px;
+    margin-bottom: 30px;
+}
+
+
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+ /*Estilo Nossa Essência*/
+ /* Título da Seção */
+ .why-us .section-title {
+     font-family: "Maitree", serif;
+     font-weight: 500;
+     color: #DCB26D;
+     margin-bottom: 20px;
+ }
+
+ /* Estilo dos Itens do Cartão */
+ .why-us .card-item {
+     background-color: #DCB26D;
+     padding: 30px 20px;
+     transition: all ease-in-out 0.3s;
+     height: 450px;
+     position: relative;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     border: none;
+     margin-bottom: 30px;
+    
+ }
+
+ .why-us .card-item span {
+     color: #5A2C0F;
+     display: block;
+     font-size: 28px;
+     font-weight: 700;
+ }
+
+ .why-us .card-item h4 {
+     font-family: "Maitree", serif;
+     font-weight: 500;
+     font-size: 24px;
+     padding: 0;
+     margin: 20px 0;
+     color: #5A2C0F;
+ }
+
+ .why-us .card-item h4 a {
+     color: #5A2C0F;
+     text-decoration: none;
+ }
+
+ .why-us .card-item p {
+     font-family: "Trykker", serif;
+     font-weight: 400;
+     font-size: 15px;
+     color: #5A2C0F;
+     margin: 0;
+     padding: 0;
+ }
+
+ /* Estilo ao passar o mouse sobre o Card */
+ .why-us .card-item:hover {
+     background-color: #5A2C0F;
+     padding: 30px 30px 70px 30px;
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+ }
+
+ .why-us .card-item:hover span,
+ .why-us .card-item:hover h4 a,
+ .why-us .card-item:hover p {
+     color: #DCB26D;
+ }
+ 
+ /*Fim estilo Full Coffee
+
+
+/* Estilização da Seção Formulário */
+
+/* Fontes */
+.formulario_titulo {
+    font-family: "Maitree", serif;
+    font-weight: 500;
+    font-style: normal;      
+    color: #DCB26D;
+}
+
+.mensagem_contato {
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #DCB26D;
+}
+
+.form-label {
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #DCB26D;
+}
+
+/* Alterando a cor da seção formulário */
+#page-contato {
+    background-color: #5A2C0F;
+}
+
+/* Estilizando o Maps */
+.mapa-embed {
+    border: 5px solid #DCB26D;
+    border-radius: 10px; 
+    padding: 0px; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    
+}
+
+/* Personalizando o Botão */
+.btn-personalizado {
+    background-color: #DCB26D; 
+    border-color: #5A2C0F; 
+    color: #5A2C0F; 
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.btn-personalizado:hover {
+    background-color: #c3a05c; 
+    border-color: #c3a05c; 
+}
+/* Fim Estilização da Seção Formulário */
 
  /*---------- PERSONALIZAÇÃO ÁREA FOOTER ---------- */
  /* Alterações de cores footer*/
