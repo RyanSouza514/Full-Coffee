@@ -1,6 +1,6 @@
 @import url(settings/variables.css);
 
-/*---------- PERSONALIZAÇÃO ÁREA FOOTER ---------- */
+/*---------- PERSONALIZAÇÃO ÁREA FUNDO ---------- */
 .gradient-personalizado {
   /* Substituto para navegadores antigos */
   background: var(--bg-verdeOliva);
@@ -24,6 +24,14 @@
 
 .nav-link:hover {
   color: rgb(255, 255, 255);
+}
+
+
+/*---------- PERSONALIZAÇÃO -> (DASH PRODUTOS) ---------- */
+
+.txt-area-size {
+  resize: none;
+  height: 100px;
 }
 
 
