@@ -13,7 +13,7 @@ body {
     font-family: "Maitree", serif;
     font-weight: 500;
     font-style: normal;
-    color: #c3a05c;
+    color: #DCB26D
 }
 
 .paragrafo {
@@ -29,41 +29,18 @@ body {
 .navbar-custom {
     background-color: #291505;
 }
-
-.navbar {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    overflow: hidden;
-   
-}
-
 .navbar-brand {
-    display: flex;
-    align-items: center;
-
+    font-family: "Maitree", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #DCB26D;
 }
 
-.navbar-brand img {
-    width: 180px;
-    height: auto;
-    margin-right: 25px;
-    display: block;
+.navbar-brand:hover {
+    color: #c3a05c;
 }
 
-.navbar-collapse {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-   
-}
-
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-}
-
+/* Estilo para os itens da navbar */
 .navbar-nav .nav-link {
     font-family: "Trykker", serif;
     font-weight: 600;
@@ -71,6 +48,11 @@ body {
     color: #DCB26D;
     display: flex;
     align-items: center;
+    padding: 10px;
+    
+}
+.navbar-nav .nav-link:hover {
+    color: #bea57c;
 }
 
 .navbar-nav .nav-link.active {
@@ -94,9 +76,17 @@ body {
     background-color: #DCB26D;
     color: #291505;
 }
+/*Mudanças no Icone de Menu*/
+ .navbar-toggler {
+     background-color: #5A2C0F;
+    
+ }
 
+.navbar-toggler-icon{
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%23DCB26D" d="M4 6h16v2H4zm0 4h16v2H4zm0 4h16v2H4z"%3E%3C/path%3E%3C/svg%3E');
+}
 
-
+/*Fim estilização Navbar*/
 
 /* --------- Personalização do Carrossel --------- */
 
@@ -127,21 +117,7 @@ img {
     background-color: #DCB26D; 
     border-color: #5A2C0F; 
 }
-/* Responsividade */
-@media (max-width: 992px) {
-    .navbar-collapse {
-        justify-content: center;
-    }
 
-    .navbar-nav {
-        margin-right: 0;
-        
-    }
-
-    .navbar-brand img {
-        width: 150px;
-    }
-}
 
 /* --------- Fim Personalização do Carrossel --------- */
 
@@ -149,7 +125,6 @@ img {
 /*Estilização Cards*/
 /*Destaques*/
 
-/*Fim destaques*/
 /* Estilo para o título da seção */
 .section-title {
     font-family: "Maitree", serif;
@@ -197,7 +172,7 @@ img {
     }
 
     .custom-btn:hover {
-        background-color: #c3a05c;
+        background-color: #5A2C0F;
         border-color: #5A2C0F;
         padding: 10px 20px;
         
@@ -330,6 +305,7 @@ img {
  }
  
  /*Fim estilo Full Coffee
+ /*Utilizei de um código já existente para adicionar a movimentação AOS*/
 
 
 /* Estilização da Seção Formulário */

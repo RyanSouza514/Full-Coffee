@@ -25,37 +25,42 @@
 
 </head>
 <body>
-  <!---Iniciando NavBar-->
-<!-- Iniciando NavBar -->
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="src/assets/img/Logotipo Full Coffee.svg" alt="Logo Full Coffee">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  
+
+  <!-- Iniciando NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-custom d-block">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Full Coffee</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-            <ul class="navbar-nav mb-2 mb-lg-0 me-3">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Quem-Somos">Quem Somos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#destaques">Destaques</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#page-contato">Contato</a>
-                </li>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link ms-3" href="#home">Home</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link" href="#quem-somos">Quem Somos</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link" href="#destaques">Destaques</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link" href="#page-contato">Contato</a>
+              </li>
+               <form class="d-flex align-items-center ms-3">
+          <a href="#page-cardapio">
+            <button class="btn btn-outline-success btn-custom" type="button">Cardápio</button>
+          </a>
+        </form>
             </ul>
-            <form class="d-flex align-items-center">
-                <a href="#page-cardapio"></a><button class="btn btn-outline-success" type="button">Cardápio</button>
-            </form>
+          </div>
         </div>
-    </div>
-</nav>
+        </nav>
+   
+    <!-- Final Menu Navegação -->
+
+
 
 
 
@@ -119,11 +124,11 @@
           <!-- Card 3 -->
           <div class="col">
             <div class="card custom-card">
-              <img src="src/assets/img/smootievegano.jpg" class="card-img-top custom-img" alt="Smootie Vegano">
+              <img src="src/assets/img/Caramelo Machiatto.jpg" class="card-img-top custom-img" alt="Smootie Caramelo Machiatto">
               <div class="card-body">
                 <h5 class="card-title"> Frescor Vegano</h5>
-                <p class="card-text">Um smoothie vegano de kiwi e aveia, uma explosão de frescor e nutrição em cada gole, perfeito,saudável e delicioso.</p>
-                <a href="#" class="btn btn-primary custom-btn">Ver no Cardápio</a>
+                <p class="card-text">Um smoothie vegano de caramelo, aveia e leite de coco: uma combinação irresistível de cremosidade e sabor.</p>
+                <a href="#page-cardapio" class="btn btn-primary custom-btn">Ver no Cardápio</a>
               </div>
             </div>
           </div>
@@ -134,7 +139,7 @@
 
     
     <!-- Iniciando Seção Quem Somos -->
-  <div id="Quem-Somos" class="container mt-5">
+  <div id="quem-somos" class="container mt-5">
 
   <div class="row"><!-- Inicio ROW Quem somos-->
 
