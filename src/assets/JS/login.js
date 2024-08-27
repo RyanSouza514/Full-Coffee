@@ -1,16 +1,21 @@
-let btn = document.querySelector('#verSenha');
+let verSenha = document.querySelector('#verSenha');
 
 
 
-btn.addEventListener('click', ()=> {
+// -- Ação Click = Para Visualizar campo senha e alterar ICONE
+verSenha.addEventListener('click', ()=> {
     let inputSenha = document.querySelector('#senha-login')
 
     if(inputSenha.getAttribute('type') == 'password') {
         inputSenha.setAttribute('type', 'text')
+        verSenha.classList.replace('bi-eye-slash', 'bi-eye');
     }else {
         inputSenha.setAttribute('type', 'password')
+        verSenha.classList.replace('bi-eye', 'bi-eye-slash');
     }
 })
+
+
 
 
 // -- Função para verificar se campo de email foi preenchido
