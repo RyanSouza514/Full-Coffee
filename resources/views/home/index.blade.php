@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="src/assets/CSS/style.css">
     <link rel="stylesheet" href="src/assets/css/index.css">
     <link rel="stylesheet" href="src/assets/CSS/generic/normalize.css"> 
+    @vite('resources/css/index.css');
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
