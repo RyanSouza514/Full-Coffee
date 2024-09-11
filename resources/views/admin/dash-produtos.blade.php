@@ -1,6 +1,4 @@
-
-
-<x-layout>
+<x-layout-dashboard title="Cadastro de Produtos">
     
                 <!-- --- Inicio conteudo -->
                 <div class="container mt-3">
@@ -11,16 +9,17 @@
                                     <h4>Cadastro de Produtos</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form action="{{Route('Produtos.store')}}" method="post" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="mb-2">
                                             <label for="" class="form-label fw-medium">Selecione a Categoria</label>
                                             <div class="input-group">
                                                 <select class="form-select">
                                                     <option selected>Selecione uma opção</option>
-                                                    <option value="a">Café</option>
-                                                    <option value="b">Bebidas</option>
-                                                    <option value="c">Lanches Naturais</option>
-                                                    <option value="d">Doces</option>
+                                                    <option value="1">Café</option>
+                                                    <option value="2">Bebidas</option>
+                                                    <option value="3">Lanches Naturais</option>
+                                                    <option value="4">Doces</option>
                                                 </select>
                                                 <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#categoria-modal">
                                                     <i class="bi bi-plus-circle" title="Adicionar nova SubCategoria">
@@ -36,10 +35,10 @@
                                             <div class="input-group">
                                                 <select class="form-select">
                                                     <option selected>Selecione uma opção</option>
-                                                    <option value="a">Natural</option>
-                                                    <option value="b">Expresso</option>
-                                                    <option value="c">Polpas</option>
-                                                    <option value="d">Suco da Fruta</option>
+                                                    <option value="1">Natural</option>
+                                                    <option value="2">Expresso</option>
+                                                    <option value="3">Polpas</option>
+                                                    <option value="4">Suco da Fruta</option>
                                                 </select>
                                                 <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#subCategoria-modal">
                                                     <i class="bi bi-plus-circle" title="Adicionar nova SubCategoria">
@@ -55,38 +54,38 @@
 
                                             <div class="col-md-8 mb-3">
                                                 <label for="produtoNome" class="form-label fw-medium">Nome do Produto</label>
-                                                <input type="text" class="form-control" id="produtoNome" placeholder="Digite aqui...">
+                                                <input type="text" class="form-control" id="produtoNome" name="nome_produto" placeholder="Digite aqui...">
                                             </div>
                                             <div class="col-md-4 mb-3" >
                                                 <label for="categoriaNome" class="form-label fw-medium text-success">Preço R$</label>
-                                                <input type="text" class="form-control border-2 border-success" id="categoriaNome" placeholder="Digite aqui...">
+                                                <input type="text" class="form-control border-2 border-success" id="categoriaNome" name="preco" placeholder="Digite aqui...">
                                             </div>
 
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="selecao-arquivo" class="form-label fw-medium">Selecionar Imagem</label>
-                                            <input class="form-control" type="file" id="selecao-arquivo">
+                                            <input class="form-control" type="file" name="imagem" id="selecao-arquivo">
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg   mb-2">
                                                 <label for="descricaoArea" class="form-label fw-medium">Descrição</label>
                                                 <div class="">
-                                                    <textarea class="form-control txt-area-size" placeholder="" id="descricaoArea"></textarea>
+                                                    <textarea class="form-control txt-area-size" placeholder="" id="descricaoArea" name="descricao"></textarea>
                                                 </div>
                                             </div>
     
                                             <div class="col-lg  mb-2">
                                                 <label for="obsvacaoArea" class="form-label fw-medium">Observação</label>
                                                 <div class="">
-                                                    <textarea class="form-control txt-area-size" placeholder="" id="obsvacaoArea"></textarea>
+                                                    <textarea class="form-control txt-area-size" placeholder="" id="obsvacaoArea" name="observacao"></textarea>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="form-check form-switch mt-2">
-                                            <input class="form-check-input" type="checkbox" role="switch" id="desativarItemCheck">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="desativarItemCheck" name="check">
                                             <label class="form-check-label fw-medium" for="desativarItemCheck">Desabilitar Produto</label>
                                         </div>
 
@@ -259,5 +258,5 @@
         </div>
       </div>
 
-    </x-layout>
+    </x-layout-dashboard>
     
