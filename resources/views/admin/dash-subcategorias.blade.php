@@ -9,6 +9,7 @@
                                     <h4>Cadastro de SubCategoria</h4>
                                 </div>
                                 <div class="card-body">
+<<<<<<< HEAD
 
                                     @if($mensagem = Session::get("sucesso"))
                                         <div class="alert alert-success">{{$mensagem}}</div>
@@ -20,6 +21,10 @@
 
                                     <form action="{{Route('SubCategoria.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
+=======
+                                    <form >
+                                        @csrf
+>>>>>>> e9c8de6ea94344211d2e985f208d1e864cfd8185
                                         <div class="mb-2">
                                             <label for="nome_subcategoria" class="form-label fw-medium">Nome da SubCategoria</label>
                                             <input type="text" class="form-control" id="nome_subcategoria" name="nome_subcategoria" placeholder="Digite aqui...">
