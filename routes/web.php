@@ -16,3 +16,8 @@ Route::get('/', function () {
 Route::resource('/Dashbord/Produtos', ProdutosController::class);
 
 Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');
+
+//Rotas Tela Cardapio//
+Route::get('/cardapio', function () {
+    return view('cardapio');
+});
