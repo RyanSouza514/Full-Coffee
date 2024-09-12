@@ -1,6 +1,4 @@
-
-
-<x-layout>
+<x-layout-dashboard title="Cadastro de Produtos">
     
                 <!-- --- Inicio conteudo -->
                 <div class="container mt-3">
@@ -11,16 +9,23 @@
                                     <h4>Cadastro de Produtos</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+
+                                    @if($mensagem = Session::get("sucesso"))
+                                        <div class="alert alert-success">{{$mensagem}}</div>
+                                    @endif
+
+
+                                    <form action="{{Route('Produtos.store')}}" method="post" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="mb-2">
                                             <label for="" class="form-label fw-medium">Selecione a Categoria</label>
                                             <div class="input-group">
-                                                <select class="form-select">
+                                                <select class="form-select" name="categoria_id">
                                                     <option selected>Selecione uma opção</option>
-                                                    <option value="a">Café</option>
-                                                    <option value="b">Bebidas</option>
-                                                    <option value="c">Lanches Naturais</option>
-                                                    <option value="d">Doces</option>
+                                                    <option value="1">Café</option>
+                                                    <option value="2">Bebidas</option>
+                                                    <option value="3">Lanches Naturais</option>
+                                                    <option value="4">Doces</option>
                                                 </select>
                                                 <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#categoria-modal">
                                                     <i class="bi bi-plus-circle" title="Adicionar nova SubCategoria">
@@ -34,12 +39,12 @@
                                         <div class="mb-3">
                                             <label for="" class="form-label fw-medium">Selecione a SubCategoria</label>
                                             <div class="input-group">
-                                                <select class="form-select">
+                                                <select class="form-select" name="subcategoria_id">
                                                     <option selected>Selecione uma opção</option>
-                                                    <option value="a">Natural</option>
-                                                    <option value="b">Expresso</option>
-                                                    <option value="c">Polpas</option>
-                                                    <option value="d">Suco da Fruta</option>
+                                                    <option value="1">Natural</option>
+                                                    <option value="2">Expresso</option>
+                                                    <option value="3">Polpas</option>
+                                                    <option value="4">Suco da Fruta</option>
                                                 </select>
                                                 <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#subCategoria-modal">
                                                     <i class="bi bi-plus-circle" title="Adicionar nova SubCategoria">
@@ -55,38 +60,38 @@
 
                                             <div class="col-md-8 mb-3">
                                                 <label for="produtoNome" class="form-label fw-medium">Nome do Produto</label>
-                                                <input type="text" class="form-control" id="produtoNome" placeholder="Digite aqui...">
+                                                <input type="text" class="form-control" id="produtoNome" name="nome_produto" placeholder="Digite aqui...">
                                             </div>
                                             <div class="col-md-4 mb-3" >
-                                                <label for="categoriaNome" class="form-label fw-medium text-success">Preço R$</label>
-                                                <input type="text" class="form-control border-2 border-success" id="categoriaNome" placeholder="Digite aqui...">
+                                                <label for="preco" class="form-label fw-medium text-success">Preço R$</label>
+                                                <input type="number" step="0.01" class="form-control border-2 border-success" id="preco" name="preco" placeholder="Digite aqui...">
                                             </div>
 
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="selecao-arquivo" class="form-label fw-medium">Selecionar Imagem</label>
-                                            <input class="form-control" type="file" id="selecao-arquivo">
+                                            <input class="form-control" type="file" name="imagem" id="selecao-arquivo">
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg   mb-2">
                                                 <label for="descricaoArea" class="form-label fw-medium">Descrição</label>
                                                 <div class="">
-                                                    <textarea class="form-control txt-area-size" placeholder="" id="descricaoArea"></textarea>
+                                                    <textarea class="form-control txt-area-size" placeholder="" id="descricaoArea" name="descricao"></textarea>
                                                 </div>
                                             </div>
     
                                             <div class="col-lg  mb-2">
                                                 <label for="obsvacaoArea" class="form-label fw-medium">Observação</label>
                                                 <div class="">
-                                                    <textarea class="form-control txt-area-size" placeholder="" id="obsvacaoArea"></textarea>
+                                                    <textarea class="form-control txt-area-size" placeholder="" id="obsvacaoArea" name="observacao"></textarea>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="form-check form-switch mt-2">
-                                            <input class="form-check-input" type="checkbox" role="switch" id="desativarItemCheck">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="desativarItemCheck" name="check" checked>
                                             <label class="form-check-label fw-medium" for="desativarItemCheck">Desabilitar Produto</label>
                                         </div>
 
@@ -117,96 +122,24 @@
                                         </thead>
                                         <tbody>
                                             <!-- Exemplo de dados estáticos -->
-                                            <tr>
-                                                <td class="col-md d-none d-md-table-cell ">1</td>
-                                                <td>Cappucino</td>
-                                                <td>17,99</td>
-                                                <td class="col-md-3 d-none d-md-table-cell">Natural/Café</td>
-                                                <td>Sim</td>
-                                                <td class="d-flex justify-content-center">
-                                                    <button class="btn btn-outline-primary btn-sm me-2">
-                                                        <i class="bi bi-pencil-square" title="Editar"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-danger btn-sm">
-                                                        <i class="bi bi-x-circle-fill" title="Excluir" ></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="d-none d-md-table-cell">2</td>
-                                                <td>Pão de queijo</td>
-                                                <td>15,99</td>
-                                                <td class="col-md-3 d-none d-md-table-cell">Doces Diet/Doces</td>
-                                                <td>Sim</td>
-                                                <td class="d-flex justify-content-center">
-                                                    <button class="btn btn-outline-primary btn-sm me-2">
-                                                        <i class="bi bi-pencil-square" title="Editar"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-danger btn-sm">
-                                                        <i class="bi bi-x-circle-fill" title="Excluir" ></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="d-none d-md-table-cell">3</td>
-                                                <td>Empada</td>
-                                                <td>10,99</td>
-                                                <td class="col-md-3 d-none d-md-table-cell">Bebidas Diet/Bebidas Diversas</td>
-                                                <td>Não</td>
-                                                <td class="d-flex justify-content-center">
-                                                    <button class="btn btn-outline-primary btn-sm me-2">
-                                                        <i class="bi bi-pencil-square" title="Editar"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-danger btn-sm">
-                                                        <i class="bi bi-x-circle-fill" title="Excluir" ></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="d-none d-md-table-cell">4</td>
-                                                <td>Brownie</td>
-                                                <td>7,99</td>
-                                                <td class="col-md-3 d-none d-md-table-cell">Natural/Café</td>
-                                                <td>Sim</td>
-                                                <td class="d-flex justify-content-center">
-                                                    <button class="btn btn-outline-primary btn-sm me-2">
-                                                        <i class="bi bi-pencil-square" title="Editar"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-danger btn-sm">
-                                                        <i class="bi bi-x-circle-fill" title="Excluir" ></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="d-none d-md-table-cell">5</td>
-                                                <td>Pudim</td>
-                                                <td>14,99</td>
-                                                <td class="col-md-3 d-none d-md-table-cell">Polpas/Lanches Naturais</td>
-                                                <td>Sim</td>
-                                                <td class="d-flex justify-content-center">
-                                                    <button class="btn btn-outline-primary btn-sm me-2">
-                                                        <i class="bi bi-pencil-square" title="Editar"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-danger btn-sm">
-                                                        <i class="bi bi-x-circle-fill" title="Excluir" ></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="d-none d-md-table-cell">6</td>
-                                                <td>Tortas</td>
-                                                <td>22,99</td>
-                                                <td class="col-md-3 d-none d-md-table-cell">Expresso/Café</td>
-                                                <td>Sim</td>
-                                                <td class="d-flex justify-content-center">
-                                                    <button class="btn btn-outline-primary btn-sm me-2">
-                                                        <i class="bi bi-pencil-square" title="Editar"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-danger btn-sm">
-                                                        <i class="bi bi-x-circle-fill" title="Excluir" ></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                             @foreach ($produtos as $produto)
+                                                <tr>
+                                                    <td class="col-md d-none d-md-table-cell ">{{$produto->id}}</td>
+                                                    <td>{{$produto->nome_produto}}</td>
+                                                    <td>{{number_format($produto->preco,2,',','.')}}</td>
+                                                    <td class="col-md-3 d-none d-md-table-cell">{{$produto->categoria_id}}/{{$produto->subcategoria_id}}</td>
+                                                    <td>{{$produto->check == 1 ? 'Ativo' : 'Inativo'}}</td>
+                                                    <td class="d-flex justify-content-center">
+                                                        <button class="btn btn-outline-primary btn-sm me-2">
+                                                            <i class="bi bi-pencil-square" title="Editar"></i>
+                                                        </button>
+                                                        <button class="btn btn-outline-danger btn-sm">
+                                                            <i class="bi bi-x-circle-fill" title="Excluir" ></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                             @endforeach
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -259,5 +192,5 @@
         </div>
       </div>
 
-    </x-layout>
+    </x-layout-dashboard>
     
