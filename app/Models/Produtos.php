@@ -20,4 +20,9 @@ class Produtos extends Model
         "observacao"
     ];
     use HasFactory;
+
+    protected  $casts = [
+            'check' => 'boolean'
+    ];
+    
 }
