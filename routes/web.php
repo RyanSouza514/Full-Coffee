@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\SubCategoriaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,8 +12,11 @@ Route::get('/', function () {
 
 
 //ROTAS TELA DE PRODUTOS
-
-// Route::get('/Dashbord/Produtos', [ProdutosController::class, 'index']);
 Route::resource('/Dashbord/Produtos', ProdutosController::class);
+
+//ROTAS TELA DE SUBCATEGORIA
+Route::resource('/Dashbord/SubCategoria', SubCategoriaController::class);
+
+
 
 Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');
