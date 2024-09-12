@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 
@@ -11,3 +13,12 @@ Route::get('/', function () {
 Route::get('/dash/categoria', [CategoriaController::class, 'index'])->name('dash.categoria');
 Route::post('/dash/categoria/store', [CategoriaController::class, 'store'])->name('dash.categoriaStore');
 
+
+
+
+//ROTAS TELA DE PRODUTOS
+
+// Route::get('/Dashbord/Produtos', [ProdutosController::class, 'index']);
+Route::resource('/Dashbord/Produtos', ProdutosController::class);
+
+Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');

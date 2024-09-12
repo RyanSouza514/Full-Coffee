@@ -5,7 +5,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <video class="d-block w-100" autoplay loop muted>
-        <source src="src/assets/img/video-carrousel.mp4" type="video/mp4">
+        <source src="{{Vite::asset('resources/assets/video/video-carrousel.mp4')}}" type="video/mp4">
         Seu navegador não suporta o vídeo.
       </video>
       <div class="carousel-caption d-none d-md-block mb-5">
@@ -30,7 +30,7 @@
           <!-- Card 1 -->
           <div class="col">
             <div class="card custom-card">
-              <img src="src/assets/img/espresso.jpg" class="card-img-top custom-img" alt="Café Espresso">
+              <img src="{{Vite::asset('resources/assets/img/espresso.jpg')}}" class="card-img-top custom-img" alt="Café Espresso">
               <div class="card-body">
                 <h5 class="card-title">Espresso com "S"</h5>
                 <p class="card-text">Cada espresso é uma expressão pura de sabor, simples, mas extraordinariamente cremoso e intenso.</p>
@@ -43,7 +43,7 @@
                     <!-- Card 3 -->
           <div class="col">
             <div class="card custom-card">
-              <img src="src/assets/img/Torta de Nozes.jpg" class="card-img-top custom-img" alt="Torta de Nozes">
+              <img src="{{Vite::asset('resources/assets/img/Torta de Nozes.jpg')}}" class="card-img-top custom-img" alt="Torta de Nozes">
               <div class="card-body">
                 <h5 class="card-title">Crocância e Cremozidade</h5>
                 <p class="card-text">Uma torta de nozes com a combinação perfeita de crocância e cremosidade, proporcionando um prazer a cada pedaço.</p>
@@ -55,7 +55,7 @@
           <!-- Card 3 -->
           <div class="col">
             <div class="card custom-card">
-              <img src="src/assets/img/Caramelo Machiatto.jpg" class="card-img-top custom-img" alt="Smootie Caramelo Machiatto">
+              <img src="{{Vite::asset('resources/assets/img/Caramelo Machiatto.jpg')}}" class="card-img-top custom-img" alt="Smootie Caramelo Machiatto">
               <div class="card-body">
                 <h5 class="card-title"> Frescor Vegano</h5>
                 <p class="card-text">Um smoothie vegano de caramelo, aveia e leite de coco: uma combinação irresistível de cremosidade e sabor.</p>
@@ -83,7 +83,7 @@
     </div><!-- Final Quem Somos-->
 
     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200"><!-- Inicio Imagem Quem Somos-->
-      <img src="src/assets/img/img-sobre.jpg" class="img-fluid" alt="Imagem do Interior da Cafeteria Full Coffee">
+      <img src="{{Vite::asset('resources/assets/img/img-sobre.jpg')}}" class="img-fluid" alt="Imagem do Interior da Cafeteria Full Coffee">
     </div><!-- Final Imagem Sobre-->
     </div><!-- Fim ROW Quem somos -->
 
@@ -94,7 +94,7 @@
       <!--Iniciando a Seção Porque escolher a Full Coffee-->
         <section id="why-us" class="why-us section">
           <div class="container section-title" data-aos="fade-up">
-      <h2 class="titulo">Nossa Essência</h2>
+      <h2 class="titulo"> Essência</h2>
       <div><span>Na <strong>Full Coffee</strong>, cada grão e xícara refletem nosso compromisso em oferecer uma experiência única, onde o café é mais que uma bebida; é uma arte e uma paixão que compartilhamos com nossos clientes.</span> <span class="description-title"></span>
       </div>
       </div>
@@ -139,31 +139,42 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-12 col-md-7"> <!--Inicio Formulário Contato-->
-            <div>
-              <h1 class="formulario_titulo">Envie sua mensagem</h1>
-              <p class="mensagem_contato">Tem alguma dúvida ou quer falar conosco? Entre em contato com a nossa equipe, estamos prontos para ajudar!</p>
+           
+            <form method="post" action="{{route('contato')}}">
+      
+              @csrf
 
+              <h1 class="formulario_titulo">Envie sua mensagem</h1>
+
+              <p class="mensagem_contato">Tem alguma dúvida ou quer falar conosco? Entre em contato com a nossa equipe, estamos prontos para ajudar!</p>
+              @if($mensagem = Session::get("sucesso"))
+              <div class="alert alert-success mt-3">{{$mensagem}}</div>
+            @endif
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu Nome">
+                <input required type="text" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu Nome" name="nome">
               </div>
+
               <div class="mb-3">
                 <label for="exampleFormControlInput2" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="Digite seu Email">
+                <input required type="email" class="form-control" id="exampleFormControlInput2" placeholder="Digite seu Email" name="email">
               </div>
+
               <div class="mb-3">
                 <label for="exampleFormControlInput3" class="form-label">Telefone:</label>
-                <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Digite seu Telefone">
+                <input required type="text" class="form-control" id="exampleFormControlInput3" placeholder="Digite seu Telefone" name="telefone">
               </div>
+
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Sua mensagem:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea required class="form-control" id="exampleFormControlTextarea1" rows="3" name="mensagem" maxlength="100"></textarea>
               </div>
+
               <div class="mb-3">
-                <button type="button" class="btn btn-personalizado">Enviar Mensagem</button>
+                <button class="btn btn-personalizado">Enviar Mensagem</button>
             </div>
             
-            </div>
+            </form>
           </div> <!--Final Formulario-->
 
           

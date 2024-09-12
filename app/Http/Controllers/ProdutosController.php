@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produtos;
 use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
@@ -11,8 +12,9 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        return view("admin.dash-produtos");
-        
+        $produtos = Produtos::all();
+        // dd($produtos);
+        return view('admin.dash-produtos', ['produtos' => $produtos]);
     }
 
     /**
@@ -28,7 +30,41 @@ class ProdutosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        if(isset($request->all()['check'])){
+            $produtoAtivo = true;
+        }else{
+            $produtoAtivo = false;
+        }
+        
+        $request->all()['preco'] = number_format($request->all()['preco'], 2);
+        
+        $validacao = $request->validate([
+            "categoria_id"=>["required"],
+            "subcategoria_id"=>["required"],    
+            "nome_produto"=>["required","string"],
+            "preco"=>["required"],
+            "imagem"=>["required","extensions:jpg,png"],           
+        ]);
+        
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+            $requestImagem = $request['imagem'];
+            $resquestImageName = $requestImagem->getClientOriginalName();
+            $requestImageExtension = $requestImagem->extension();
+
+            $newImageName = md5(uniqid() . $resquestImageName) . '.' . $requestImageExtension;
+
+            $requestImagem->move(public_path('img/cardapio/'), $newImageName);
+
+            $validacao['imagem'] = $newImageName;
+        }
+        
+        $validacao['check'] = $produtoAtivo;
+
+        Produtos::create($validacao);
+        
+        return redirect(route('Produtos.index'))->with('sucesso', 'Produto Cadastro com sucesso!');
+        
     }
 
     /**
@@ -36,7 +72,7 @@ class ProdutosController extends Controller
      */
     public function show(string $id)
     {
-        return "show";
+        //
     }
 
     /**
