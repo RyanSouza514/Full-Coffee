@@ -25,7 +25,3 @@ Route::post('/dash/categoria/store', [CategoriaController::class, 'store'])->nam
 Route::resource('/Dashbord/Produtos', ProdutosController::class);
 
 Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');
-
-Route::get('/contato',[ContatoController::class, "contatoDash"])->name("contatoDash");
-
-Route::post('/dashbord/mensagens',[DashContatosController::class,'contatoDash'])->name('contato');
