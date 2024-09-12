@@ -8,7 +8,8 @@
                                     <h4>Cadastro de Categoria</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post" action="{{Route('dash.categoria')}}" >
+                                        @csrf
                                         <div class="mb-3">
                                             <label for="categoryName" class="form-label fw-medium">Nome da Categoria</label>
                                             <input type="text" class="form-control" id="categoryName" placeholder="Digite aqui...">

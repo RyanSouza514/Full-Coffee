@@ -11,7 +11,8 @@
                                     <h4>Cadastro de SubCategoria</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form >
+                                        @csrf
                                         <div class="mb-2">
                                             <label for="categoryName" class="form-label fw-medium">Nome da SubCategoria</label>
                                             <input type="text" class="form-control" id="categoryName" placeholder="Digite aqui...">
