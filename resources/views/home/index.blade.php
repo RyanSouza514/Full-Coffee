@@ -1,4 +1,6 @@
 <x-layoutindex>
+  <!--ESTILIZAÇÃO PERSONALIZADA HOME-->
+  @vite('resources/css/index.css')
 
   <!-- Carrousel com Vídeo -->
   <div id="carouselExampleCaptions" class="carousel slide">

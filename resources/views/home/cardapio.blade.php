@@ -1,11 +1,11 @@
 <x-layoutindex>
 
- @vite('resources/css/cardapio.css')
+    @vite('resources\assets\css\cardapio.css')
     <!-- Carrossel com Imagem -->
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ Vite::asset('resources\assets\img\img-cardapio\Carrousel Cardápio -img.svg') }}"class="d-block w-100 img-fluid"
+                <img src="{{ Vite::asset('resources/assets/img/img-cardapio/CarrouselCardápio-img.svg')}}" class="d-block w-100 img-fluid"
                     alt="Imagem do carrossel">
                 <div class="carousel-caption d-none d-md-block mb-5">
                 </div>
@@ -138,7 +138,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{ Vite::asset('resources/assets/img/img-cardapio/Espresso-sa.png') }}"
+                                                <img src="{{ Vite::asset('resources/assets/img/img-cardapio/Espresso-sa.png')}}"
                                                     class="img-fluid rounded-start" alt="Espresso">
                                             </div>
                                         </div>
@@ -158,8 +158,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{ Vite::asset('resources/assets/img/img-cardapio/americano-sa.png"}} class="img-fluid rounded-start"
-                                                    alt="Americano">
+                                                <img src="{{ Vite::asset('resources/assets/img/img-cardapio/americano-sa.png')}}" 
+                                                class="img-fluid rounded-start" alt="Americano">
                                             </div>
                                         </div>
                                     </div>
@@ -179,7 +179,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/flatwhite-sa.png"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/flatwhite-sa.png')}}"
                                                     class="img-fluid rounded-start" alt="Flat White">
                                             </div>
                                         </div>
@@ -200,8 +200,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/capuccino-sa.png"
-                                                    class="img-fluid rounded-start" alt="Cappuccino">
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/capuccino-sa.png')}}"
+                                                class="img-fluid rounded-start" alt="Cappuccino">
                                             </div>
                                         </div>
                                     </div>
@@ -221,7 +221,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/caramelomachiatto-sa.png"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/caramelomachiatto-sa.png')}}"
                                                     class="img-fluid rounded-start" alt="Caramelo Macchiato">
                                             </div>
                                         </div>
@@ -242,7 +242,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/latte-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/latte-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Latte">
                                             </div>
                                         </div>
@@ -262,7 +262,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/mocha-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/mocha-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Mocha">
                                             </div>
                                         </div>
@@ -283,7 +283,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/mocha-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/mocha-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Mocha">
                                             </div>
                                         </div>
@@ -304,7 +304,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cafev60-sa.png"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cafev60-sa.png')}}"
                                                     class="img-fluid rounded-start" alt="Café Coado em V60">
                                             </div>
                                         </div>
@@ -338,7 +338,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/lattegelado-sa.webp"
+                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/lattegelado-sa.webp')}}"
                                                 class="img-fluid rounded-start" alt="Latte Gelado">
                                         </div>
                                     </div>
@@ -359,7 +359,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/chocoice-sa.webp"
+                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/chocoice-sa.webp')}}"
                                                 class="img-fluid rounded-start" alt="Choco Ice">
                                         </div>
                                     </div>
@@ -379,7 +379,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/icedlatte-sa.webp"
+                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/icedlatte-sa.webp')}}"
                                                 class="img-fluid rounded-start" alt="Iced Latte">
                                         </div>
                                     </div>
@@ -399,7 +399,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/icedchailatte-sa.webp"
+                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/icedchailatte-sa.webp')}}"
                                                 class="img-fluid rounded-start" alt="Iced Latte Chai">
                                         </div>
                                     </div>
@@ -420,7 +420,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/frappechocolate-sa.webp"
+                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/frappechocolate-sa.webp')}}"
                                                 class="img-fluid rounded-start" alt="Frappé Chocolate">
                                         </div>
                                     </div>
@@ -440,7 +440,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/frappecaramelo-sa.webp"
+                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/frappecaramelo-sa.webp')}}"
                                                 class="img-fluid rounded-start" alt="Frappé Caramelo">
                                         </div>
                                     </div>
@@ -461,7 +461,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/frappeoreo-sa.webp"
+                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/frappeoreo-sa.webp')}}"
                                                 class="img-fluid rounded-start" alt="Frappé Oreo">
                                         </div>
                                     </div>
@@ -481,7 +481,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/frappepacoca-sa.webp"
+                                            <img src="{{Vite::asset('resources/assets/img/img-cardapio/frappepacoca-sa.webp')}}"
                                                 class="img-fluid rounded-start" alt="Frappé Paçoca">
                                         </div>
                                     </div>
@@ -519,7 +519,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chalimao-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chalimao-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Chá de Limão">
                                             </div>
                                         </div>
@@ -540,7 +540,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cháhibisco-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cháhibisco-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Chá de Hibisco">
                                             </div>
                                         </div>
@@ -561,7 +561,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chamaça-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chamaça-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Chá de Maçã Verde">
                                             </div>
                                         </div>
@@ -582,7 +582,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chamaracuja-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chamaracuja-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Chá de Maracujá">
                                             </div>
                                         </div>
@@ -604,7 +604,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chacramberry-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chacramberry-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Chá de Cranberry">
                                             </div>
                                         </div>
@@ -625,7 +625,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chapessego-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chapessego-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Chá Pêssego">
                                             </div>
                                         </div>
@@ -646,7 +646,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chamorango-sa.webp"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/chamorango-sa.webp')}}"
                                                     class="img-fluid rounded-start" alt="Chá de Morango">
                                             </div>
                                         </div>
@@ -683,8 +683,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootiemorango-sa.webp" class="img-fluid rounded-start"
-                                            alt="Smoothie de Morango">
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootiemorango-sa.webp')}}" 
+                                        class="img-fluid rounded-start" alt="Smoothie de Morango">
                                     </div>
                                 </div>
                             </div>
@@ -706,8 +706,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootiemaracuja-sa.webp" class="img-fluid rounded-start"
-                                            alt="Smoothie de Maracujá">
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootiemaracuja-sa.webp')}}"
+                                         class="img-fluid rounded-start" alt="Smoothie de Maracujá">
                                     </div>
                                 </div>
                             </div>
@@ -728,8 +728,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootieovomaltine-sa.webp" class="img-fluid rounded-start"
-                                            alt="Smoothie de Ovomaltine">
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootieovomaltine-sa.webp')}}" 
+                                        class="img-fluid rounded-start" alt="Smoothie de Ovomaltine">
                                     </div>
                                 </div>
                             </div>
@@ -750,8 +750,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootienutella-sa.webp" class="img-fluid rounded-start"
-                                            alt="Smoothie de Nutella">
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootienutella-sa.webp')}}"
+                                         class="img-fluid rounded-start" alt="Smoothie de Nutella">
                                     </div>
                                 </div>
                             </div>
@@ -773,8 +773,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootieamora-sa.webp" class="img-fluid rounded-start"
-                                            alt="Smoothie de Amora">
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootieamora-sa.webp')}}" 
+                                        class="img-fluid rounded-start" alt="Smoothie de Amora">
                                     </div>
                                 </div>
                             </div>
@@ -796,8 +796,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootiecafechoc.webp" class="img-fluid rounded-start"
-                                            alt="Smoothie de Café com Chocolate">
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/smootiecafechoc.webp')}}" 
+                                        class="img-fluid rounded-start" alt="Smoothie de Café com Chocolate">
                                     </div>
                                 </div>
                             </div>
@@ -846,8 +846,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/bolodecafe-sa.webp" class="img-fluid rounded-start"
-                                                    alt="Bolo de Café com Nozes">
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/bolodecafe-sa.webp')}}"
+                                                 class="img-fluid rounded-start" alt="Bolo de Café com Nozes">
                                             </div>
                                         </div>
                                     </div>
@@ -866,8 +866,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/bolodecacau-sa.webp" class="img-fluid rounded-start"
-                                                    alt="Bolo de Cacau">
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/bolodecacau-sa.webp')}}"
+                                                 class="img-fluid rounded-start" alt="Bolo de Cacau">
                                             </div>
                                         </div>
                                     </div>
@@ -888,8 +888,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/bolodecenoura-sa.webp" class="img-fluid rounded-start"
-                                                    alt="Bolo de Cenoura">
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/bolodecenoura-sa.webp')}}"
+                                                 class="img-fluid rounded-start" alt="Bolo de Cenoura">
                                             </div>
                                         </div>
                                     </div>
@@ -910,9 +910,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cheesecakefrutas-sa.webp"
-                                                    class="img-fluid rounded-start"
-                                                    alt="Cheesecake de Frutas Vermelhas">
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cheesecakefrutas-sa.webp')}}"
+                                                    class="img-fluid rounded-start" alt="Cheesecake de Frutas Vermelhas">
                                             </div>
                                         </div>
                                     </div>
@@ -933,7 +932,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cheescakeoreo-sa.webp" class="img-fluid rounded-start"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cheescakeoreo-sa.webp" class="img-fluid rounded-start')}}"
                                                     alt="Cheesecake de Oreo">
                                             </div>
                                         </div>
@@ -955,7 +954,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/caramelapple-sa.webp" class="img-fluid rounded-start"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/caramelapple-sa.webp" class="img-fluid rounded-start')}}"
                                                     alt="Cheesecake de Caramelo">
                                             </div>
                                         </div>
@@ -977,7 +976,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cheescake-sa.webp" class="img-fluid rounded-start"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/cheescake-sa.webp" class="img-fluid rounded-start')}}"
                                                     alt="Cheesecake de Doce de Leite">
                                             </div>
                                         </div>
@@ -998,7 +997,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/tortabanana-sa.webp" class="img-fluid rounded-start"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/tortabanana-sa.webp" class="img-fluid rounded-start')}}"
                                                     alt="Torta de Banana">
                                             </div>
                                         </div>
@@ -1019,7 +1018,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/brownie-sa.webp" class="img-fluid rounded-start"
+                                                <img src="{{Vite::asset('resources/assets/img/img-cardapio/brownie-sa.webp" class="img-fluid rounded-start')}}"
                                                     alt="Brownie">
                                             </div>
                                         </div>
@@ -1053,7 +1052,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <img src="{{Vite::asset('resources/assets/img/img-cardapio/cookietradicional-sa.webp"
+                                                    <img src="{{Vite::asset('resources/assets/img/img-cardapio/cookietradicional-sa.webp')}}"
                                                         class="img-fluid rounded-start" alt="Cookies de Chocolate">
                                                 </div>
                                             </div>
@@ -1078,7 +1077,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <img src="{{Vite::asset('resources/assets/img/img-cardapio/cookienutella-sa.webp"
+                                                    <img src="{{Vite::asset('resources/assets/img/img-cardapio/cookienutella-sa.webp')}}"
                                                         class="img-fluid rounded-start" alt="Cookies de Nutella">
                                                 </div>
                                             </div>
@@ -1102,7 +1101,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <img src="{{Vite::asset('resources/assets/img/img-cardapio/cookiecoco-sa.webp" class="img-fluid rounded-start"
+                                                    <img src="{{Vite::asset('resources/assets/img/img-cardapio/cookiecoco-sa.webp" class="img-fluid rounded-start')}}"
                                                         alt="Cookies de Brigadeiro e Coco">
                                                 </div>
                                             </div>
@@ -1138,7 +1137,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/aguasemgas-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/aguasemgas-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Água Mineral Natural Sem Gás">
                                     </div>
                                 </div>
@@ -1158,7 +1157,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/aguacomgas-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/aguacomgas-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Água Mineral Natural Com Gás">
                                     </div>
                                 </div>
@@ -1179,7 +1178,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sucolaranja-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sucolaranja-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Suco de Laranja Natural">
                                     </div>
                                 </div>
@@ -1203,7 +1202,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sucolarango-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sucolarango-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Suco de Laranja com Calda de Morango Natural">
                                     </div>
                                 </div>
@@ -1224,7 +1223,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/slushiemorango-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/slushiemorango-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Slushie de Morango">
                                     </div>
                                 </div>
@@ -1245,7 +1244,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/SlushieMaracuja-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/SlushieMaracuja-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Slushie de Maracujá">
                                     </div>
                                 </div>
@@ -1268,7 +1267,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/slushiemaracujaemelancia-sa.webp"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/slushiemaracujaemelancia-sa.webp')}}"
                                             class="img-fluid rounded-start" alt="Slushie de Maracujá e Melancia">
                                     </div>
                                 </div>
@@ -1289,8 +1288,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/slushiemorangomaracuja-sa.webp" class="img-fluid rounded-start"
-                                            alt="Slushie de Morango e Maracujá">
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/slushiemorangomaracuja-sa.webp')}}"
+                                         class="img-fluid rounded-star" alt="Slushie de Morango e Maracujá">
                                     </div>
                                 </div>
                             </div>
@@ -1309,7 +1308,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodamaracuja-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodamaracuja-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Soda Italiana de Maracujá">
                                     </div>
                                 </div>
@@ -1330,7 +1329,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodamorango-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodamorango-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Soda Italiana de Morango">
                                     </div>
                                 </div>
@@ -1350,7 +1349,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodacramberry-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodacramberry-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Soda Italiana de Cranberry">
                                     </div>
                                 </div>
@@ -1370,7 +1369,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodalimao-sa.webp" class="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodalimao-sa.webp" class="img-fluid rounded-start')}}"
                                             alt="Soda Italiana de Limão">
                                     </div>
                                 </div>

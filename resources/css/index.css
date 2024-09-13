@@ -24,75 +24,7 @@ body {
 }
 /* --------- Fim Estilizando Títulos e Parágrafos --------- */
 
-/* Estilizando a Navbar */
 
-.navbar-custom {
-    background-color: #291505;
-}
-.navbar-brand {
-    font-family: "Maitree", serif;
-    font-weight: 700;
-    font-style: normal;
-    color: #DCB26D;
-}
-
-.navbar-brand:hover {
-    color: #c3a05c;
-}
-
-.navbar-brand img {
-    width: 40px;
-    height: 40px;
-    margin-top: -11px;
-}
-
-/* Estilo para os itens da navbar */
-.navbar-nav .nav-link {
-    font-family: "Trykker", serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #DCB26D;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    
-}
-.navbar-nav .nav-link:hover {
-    color: #bea57c;
-}
-
-.navbar-nav .nav-link.active {
-    color: #DCB26D;
-}
-
-.form {
-    display: flex;
-    align-items: center;
-}
-
-.btn-outline-success {
-    font-family: "Trykker", serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #DCB26D;
-    border-color: #DCB26D;
-}
-
-.btn-outline-success:hover {
-    background-color: #DCB26D;
-    color: #291505;
-}
-/*Mudanças no Icone de Menu*/
- .navbar-toggler {
-     background-color: #5A2C0F;
-    
- }
-
-.navbar-toggler-icon{
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%23DCB26D" d="M4 6h16v2H4zm0 4h16v2H4zm0 4h16v2H4z"%3E%3C/path%3E%3C/svg%3E');
-}
-
-/*Fim estilização Navbar*/
 
 /* --------- Personalização do Carrossel --------- */
 
@@ -222,7 +154,7 @@ img {
     line-height: 1.6;
 }
 
-/* Estilo das imagens */
+/* Estilo das imagens -> MEXER AQUIIIII */
 .img-fluid {
     width: 550px;
     height: 410px;
@@ -374,58 +306,3 @@ img {
     border-color: #c3a05c; 
 }
 /* Fim Estilização da Seção Formulário */
-
- /*---------- PERSONALIZAÇÃO ÁREA FOOTER ---------- */
- /* Alterações de cores footer*/
-
-footer {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-color: #0D0D0D;
-    color: #fff;
-}
-
-.copyright {
-    background-color: #0D0D0D;
-}
-
-a.btn-social {
-    border-radius: 100%;
-    display: inline-flex;
-    width: 3.25rem;
-    height: 3.25rem;
-    font-size: 1.25rem;
-    justify-content: center;
-    align-items: center;
-  }
-  
-
-
-
-
- /*---------- MODELO DE BREAKSPOINTS ---------- */
-
-  /* // X-Small devices (portrait phones, less than 576px) */
-  /* // No media query for `xs` since this is the default in Bootstrap */
-  
-  /* // Small devices (landscape phones, 576px and up) */
-  @media (min-width: 576px) {  }
-  
-  /* // Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) { 
-    /* section {
-        background-color: yellow;
-    } */
-
-   }
-  
-  /* // Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {  }
-  
-  /* // X-Large devices (large desktops, 1200px and up) */
-  @media (min-width: 1200px) {  }
-  
-  /* // XX-Large devices (larger desktops, 1400px and up) */
-  @media (min-width: 1400px) {  }
-  
-  
