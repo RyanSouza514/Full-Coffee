@@ -40,6 +40,12 @@ body {
     color: #c3a05c;
 }
 
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-top: -11px;
+}
+
 /* Estilo para os itens da navbar */
 .navbar-nav .nav-link {
     font-family: "Trykker", serif;
@@ -336,6 +342,12 @@ img {
 #page-contato {
     background-color: #5A2C0F;
 }
+
+/* Fixando tamanho TEXT AREA */
+.txt-area-size {
+    resize: none;
+    height: 120px;
+  }
 
 /* Estilizando o Maps */
 .mapa-embed {

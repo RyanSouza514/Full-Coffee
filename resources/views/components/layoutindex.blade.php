@@ -19,11 +19,9 @@
     <link rel="stylesheet" href="src/assets/css/index.css">
     <link rel="stylesheet" href="src/assets/CSS/generic/normalize.css"> -->
     @vite('resources/css/index.css')
+    @vite('resources/css/generic/normalize.css')
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
-
-
 
 </head>
 
@@ -33,7 +31,10 @@
     <!-- Iniciando NavBar -->
     <nav class="navbar navbar-expand-lg navbar-custom d-block">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Full Coffee</a>
+            <a class="navbar-brand" href="#">
+                <img src="{{Vite::asset('resources/assets/icons/icon-logo-coffee.png')}}">
+                Full Coffee
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
