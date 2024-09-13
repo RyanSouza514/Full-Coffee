@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Auth;
-use Hash;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -15,54 +15,6 @@ class UserController extends Controller
     public function index()
     {
         return view('admin.dash-usuario');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 
     public function login(){
@@ -75,9 +27,8 @@ class UserController extends Controller
             "password" => ["required","string"],
         ]);
 
-        
-
-        if(Auth::attempt($validacao)){
+        // Tenta autenticar o usuário
+        if(Auth::attempt(['email' => $validacao['email'], 'password' => $validacao['password']])){
             $request->session()->regenerate();
             return redirect()->intended(route("admin.dashboard"));
         }else{
@@ -90,20 +41,24 @@ class UserController extends Controller
     }
 
     public function cadastrarUsuario(Request $request){
-           $validacao = $request->validate([
+        $validacao = $request->validate([
             "name" => ["required", "string"],
-            "email"=> ["required", "email"],
+            "email"=> ["required", "email", "unique:users,email"], // Verifica se o email já existe
             "password"=> ["required", "string", "confirmed"]
         ]);
 
+        // Cria o novo usuário
         $user = new User();
         $user->name = $validacao["name"];
         $user->email = $validacao["email"];
-        $user->password = Hash::make($validacao["password"]);
+        $user->password = Hash::make($validacao["password"]); // Hash da senha
         $user->save();
 
-        Auth::attempt($validacao);
-        return redirect()->intended(route("home.index"));
+        // Autentica o usuário após o cadastro
+        Auth::attempt(['email' => $validacao['email'], 'password' => $request->password]);
+
+        //return redirect()->intended(route("admin.dash-usuario"));
+        return view('admin.dash-usuario');
     }
 
     public function deslogar(Request $request){
