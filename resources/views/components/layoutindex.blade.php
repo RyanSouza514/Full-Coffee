@@ -41,7 +41,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link ms-3" href="#home">Home</a>
+                        <a class="nav-link ms-3" href="{{Route('home.index')}}">Home</a>
                     </li>
                     <li class="nav-item ms-3">
                         <a class="nav-link" href="#quem-somos">Quem Somos</a>
@@ -53,7 +53,7 @@
                         <a class="nav-link" href="#page-contato">Contato</a>
                     </li>
                     <form class="d-flex align-items-center ms-3">
-                        <a href="#page-cardapio">
+                        <a href="{{Route('cardapio.index')}}">
                             <button class="btn btn-outline-success btn-custom" type="button">Cardápio</button>
                         </a>
                     </form>
