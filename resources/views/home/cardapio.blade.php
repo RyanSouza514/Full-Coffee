@@ -40,6 +40,7 @@
         <!-- Barra de Pesquisa -->
         <div class="container mt-4 search-container mb-4">
             <form class="input-group" action="/search" method="get">
+                @csrf
                 <input type="text" id="search" name="query" class="form-control" placeholder="Buscar">
                 <!-- Campo de entrada de texto para pesquisa -->
                 <button class="btn btn-outline-secondary input-group-text search-icon" type="submit">
