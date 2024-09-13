@@ -230,15 +230,18 @@
                     <h1 class="modal-title fs-5" id="categoriaModalLabel">Categoria</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="form-floating mb-2 text-dark">
-                        <input type="text" class="form-control" id="cadastro-rapido-categoria" placeholder="Digite sua Categoria...">
-                        <label for="cadastro-rapido-categoria">Digite sua Categoria...</label>
+                <form action="" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-floating mb-2 text-dark">
+                            <input type="text" class="form-control" id="cadastro-rapido-categoria" placeholder="Digite sua Categoria...">
+                            <label for="cadastro-rapido-categoria">Digite sua Categoria...</label>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-lg btn-primary">Cadastrar</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-primary">Cadastrar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -251,15 +254,18 @@
                     <h1 class="modal-title fs-5" id="subCategoriaModalLabel">SubCategoria</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="form-floating mb-2 text-dark">
-                        <input type="text" class="form-control" id="cadastro-rapido-subcategoria" placeholder="Digite sua SubCategoria...">
-                        <label for="cadastro-rapido-subcategoria">Digite sua Subcategoria...</label>
+                <form action="{{Route('SubCategoria.store')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                    <div class="modal-body">
+                        <div class="form-floating mb-2 text-dark">
+                            <input type="text" class="form-control" id="cadastro-rapido-subcategoria" name="nome_subcategoria" placeholder="Digite sua SubCategoria...">
+                            <label for="cadastro-rapido-subcategoria">Digite sua Subcategoria...</label>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-lg btn-primary">Cadastrar</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-primary">Cadastro</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

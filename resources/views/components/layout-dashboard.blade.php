@@ -14,28 +14,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <!--ESTILIZAÇÃO PERSONALIZADA-->
-    <link rel="stylesheet" href="../assets/CSS/dashbord.css">
-    <link rel="stylesheet" href="../assets/CSS/generic/normalize.css">
-    
-    <style>
-                    /* Esconde o input */
-            /* input[type='file'] {
-            display: none
-            } */
-
-            /* Aparência que terá o seletor de arquivo */
-            /* label.teste1{
-            background-color: #3498db;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-            margin: 10px;
-            padding: 6px 20px
-} */
-
-
-
-    </style>
+    <!-- <link rel="stylesheet" href="../assets/CSS/dashbord.css">
+    <link rel="stylesheet" href="../assets/CSS/generic/normalize.css"> -->
+    @vite('resources/css/dashbord.css')
+    @vite('resources/css/generic/normalize.css')
 
 </head>
 
@@ -72,7 +54,7 @@
                             </a>
                             <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="cadastro-produtos.html" class="nav-link px-0">
+                                    <a href="{{Route('Produtos.index')}}" class="nav-link px-0">
                                         <span class="d-none d-sm-inline">Produtos</span>
                                         <span class="d-inline d-sm-none">Prod</span>
                                     </a>
@@ -84,7 +66,7 @@
                                     </a>
                                 </li>
                                 <li class="w-100">
-                                    <a href="dash-subcategorias.html" class="nav-link px-0">
+                                    <a href="{{Route('SubCategoria.index')}}" class="nav-link px-0">
                                         <span class="d-none d-sm-inline">Sub Categorias</span>
                                         <span class="d-inline d-sm-none">Sub C</span>
                                     </a>
