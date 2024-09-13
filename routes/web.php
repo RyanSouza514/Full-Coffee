@@ -8,6 +8,7 @@ use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\SubCategoriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -30,3 +31,10 @@ Route::resource('/Dashbord/SubCategoria', SubCategoriaController::class);
 
 Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');
 Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');
+
+
+Route::get('/login', [UserController::class, 'login'])->name('login.login');
+Route::post('/login', [UserController::class, 'loginUser'])->name('login.loginUser');
+
+Route::get('/login/cadastro', [UserController::class, 'index'])->name('login.index');
+Route::post('/login/cadastro', [UserController::class, 'cadastrarUsuario'])->name('login.cadastrarUsuario');
