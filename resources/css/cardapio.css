@@ -25,72 +25,6 @@ body {
 
 /* --------- Fim Estilizando Títulos e Parágrafos --------- */
 
-/* Estilizando a Navbar */
-
-.navbar-custom {
-    background-color: #291505;
-}
-
-.navbar-brand {
-    font-family: "Maitree", serif;
-    font-weight: 700;
-    font-style: normal;
-    color: #DCB26D;
-}
-
-.navbar-brand:hover {
-    color: #c3a05c;
-}
-
-/* Estilo para os itens da navbar */
-.navbar-nav .nav-link {
-    font-family: "Trykker", serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #DCB26D;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-
-}
-
-.navbar-nav .nav-link:hover {
-    color: #bea57c;
-}
-
-.navbar-nav .nav-link.active {
-    color: #DCB26D;
-}
-
-.form {
-    display: flex;
-    align-items: center;
-}
-
-.btn-outline-success {
-    font-family: "Trykker", serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #DCB26D;
-    border-color: #DCB26D;
-}
-
-.btn-outline-success:hover {
-    background-color: #DCB26D;
-    color: #291505;
-}
-
-/*Mudanças no Icone de Menu*/
-.navbar-toggler {
-    background-color: #5A2C0F;
-
-}
-
-.navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%23DCB26D" d="M4 6h16v2H4zm0 4h16v2H4zm0 4h16v2H4z"%3E%3C/path%3E%3C/svg%3E');
-}
-
-/*Fim estilização Navbar*/
 
 /* --------- Personalização do Carrossel --------- */
 
@@ -103,23 +37,6 @@ img {
 .card-img {
     width: 300px;
     height: 200px;
-}
-
-/* Estilo personalizado para os botões internos do carrossel */
-.btn-custom {
-    background-color: #5A2C0F;
-    border-color: #5A2C0F;
-    color: #DCB26D;
-    border: 1px solid;
-    opacity: 1;
-    font-family: "Trykker", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.btn-custom:hover {
-    background-color: #DCB26D;
-    border-color: #5A2C0F;
 }
 
 
@@ -348,59 +265,3 @@ header h1 {
 
 /* Fim estilização de Imagens */
 
-
-/*Footer*/
-
-footer {
-    background: #f4f4f4;
-    padding: 20px 0;
-    text-align: center;
-    color: #333;
-}
-
-footer address {
-    margin-bottom: 20px;
-}
-
-footer .social-media img {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
-}
-
-.cor-fundo {
-    background-color: #5d4037;
-}
-
-.container1 img {
-    max-width: 100px;
-    width: auto;
-}
-
-/*Fim Cardápio*/
-
-
-
- /*---------- PERSONALIZAÇÃO ÁREA FOOTER ---------- */
- /* Alterações de cores footer*/
-
- footer {
-     padding-top: 5rem;
-     padding-bottom: 5rem;
-     background-color: #0D0D0D;
-     color: #fff;
- }
-
- .copyright {
-     background-color: #0D0D0D;
- }
-
- a.btn-social {
-     border-radius: 100%;
-     display: inline-flex;
-     width: 3.25rem;
-     height: 3.25rem;
-     font-size: 1.25rem;
-     justify-content: center;
-     align-items: center;
- }

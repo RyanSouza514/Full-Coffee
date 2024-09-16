@@ -39,7 +39,7 @@
             <h5 class="card-title">Espresso com "S"</h5>
             <p class="card-text">Cada espresso é uma expressão pura de sabor, simples, mas extraordinariamente cremoso e
               intenso.</p>
-            <a href="#cardapio.html" class="btn btn-primary custom-btn">Ver no Cardápio</a>
+            <a href="{{Route('cardapio.index')}}" class="btn btn-primary custom-btn">Ver no Cardápio</a>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
             <h5 class="card-title">Crocância e Cremozidade</h5>
             <p class="card-text">Uma torta de nozes com a combinação perfeita de crocância e cremosidade, proporcionando
               um prazer a cada pedaço.</p>
-            <a href="#" class="btn btn-primary custom-btn">Ver no Cardápio</a>
+            <a href="{{Route('cardapio.index')}}" class="btn btn-primary custom-btn">Ver no Cardápio</a>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@
             <h5 class="card-title"> Frescor Vegano</h5>
             <p class="card-text">Um smoothie vegano de caramelo, aveia e leite de coco: uma combinação irresistível de
               cremosidade e sabor.</p>
-            <a href="#page-cardapio" class="btn btn-primary custom-btn">Ver no Cardápio</a>
+            <a href="{{Route('cardapio.index')}}" class="btn btn-primary custom-btn">Ver no Cardápio</a>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
       </div><!-- Final Quem Somos-->
 
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200"><!-- Inicio Imagem Quem Somos-->
-        <img src="{{Vite::asset('resources/assets/img/img-sobre.jpg')}}" class="img-fluid"
+        <img src="{{Vite::asset('resources/assets/img/img-sobre.jpg')}}" class="img-fluid-custom"
           alt="Imagem do Interior da Cafeteria Full Coffee">
       </div><!-- Final Imagem Sobre-->
     </div><!-- Fim ROW Quem somos -->

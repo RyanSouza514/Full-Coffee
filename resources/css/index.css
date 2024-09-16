@@ -155,7 +155,7 @@ img {
 }
 
 /* Estilo das imagens -> MEXER AQUIIIII */
-.img-fluid {
+.img-fluid-custom {
     width: 550px;
     height: 410px;
     border: 0px solid #291505;
