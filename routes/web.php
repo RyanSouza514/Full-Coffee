@@ -38,7 +38,8 @@ Route::resource('/Dashbord/Mensagem', MensagemController::class);
 
 //ROTAS TELA DE PRODUTOS
 Route::resource('/Dashbord/Produtos', ProdutosController::class);
-// Route::post('/Dashbord/Produtos/Fast', [ProdutosController::class,'index'])->name('teste.index');
+Route::post('/Categoria/Criar', [CategoriaController::class,'storeCategoriaProduto'])->name('CriarCategoriaProduto');
+Route::post('/SubCategoria/Criar', [SubCategoriaController::class,'storeSubCategoriaProduto'])->name('CriarSubCategoriaProduto');
 
 //ROTAS TELA DE SUBCATEGORIA
 Route::resource('/Dashbord/SubCategoria', SubCategoriaController::class);

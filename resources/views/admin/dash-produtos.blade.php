@@ -20,13 +20,13 @@
                             <div class="mb-2">
                                 <label for="" class="form-label fw-medium">Selecione a Categoria</label>
                                 <div class="input-group">
-                                    <select class="form-select" name="categoria_id">
+                                    <select class="form-select" name="categoria_id" id="SelectCategoriaId" onchange="buscarSubCategoriaPorCategoria()" >
                                         <option selected>Selecione uma opção</option>
                                         @foreach ($categoria as $cat)
-                                            <option value="{{$cat->id}}">{{$cat->nome_categoria}}</option>
-                                            <!-- <option value="2">Bebidas</option>
-                                                                <option value="3">Lanches Naturais</option>
-                                                                <option value="4">Doces</option> -->
+                                            <option 
+                                                {{ isset($_GET['categoriaId']) && $_GET['categoriaId'] == $cat->id ? 'selected' : ''}}
+                                                value="{{$cat->id}}">{{$cat->nome_categoria}}</option>
+                                            
                                         @endforeach
                                     </select>
                                     <button class="btn btn-success" type="button" data-bs-toggle="modal"
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="preco" class="form-label fw-medium text-success">Preço R$</label>
-                                    <input type="number" step="any" class="form-control border-2 border-success"
+                                    <input type="number" step="0.01" class="form-control border-2 border-success"
                                         id="preco" name="preco" placeholder="Digite aqui...">
                                 </div>
 
@@ -141,14 +141,18 @@
                                         <td class="col-md-3 d-none d-md-table-cell">
                                             {{$prod->nome_categoria}}/{{$prod->nome_subcategoria}}
                                         </td>
-                                        <td>{{$prod->id}}</td>
+                                        <td>{{$prod->check == 1 ? 'Sim': 'Não';}}</td>
                                         <td class="d-flex justify-content-center">
                                             <button class="btn btn-outline-primary btn-sm me-2">
                                                 <i class="bi bi-pencil-square" title="Editar"></i>
                                             </button>
-                                            <button class="btn btn-outline-danger btn-sm">
-                                                <i class="bi bi-x-circle-fill" title="Excluir"></i>
-                                            </button>
+                                            <form action="{{Route('Produtos.destroy', $prod)}}" method="POST">
+                                                @csrf
+                                                @method("DELETE")
+                                                <button class="btn btn-outline-danger btn-sm">
+                                                    <i class="bi bi-x-circle-fill" title="Excluir"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -170,17 +174,17 @@
                     <h1 class="modal-title fs-5" id="categoriaModalLabel">Categoria</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{Route('CriarCategoriaProduto')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-floating mb-2 text-dark">
-                            <input type="text" class="form-control" id="cadastro-rapido-categoria"
+                            <input type="text" class="form-control" id="cadastro-rapido-categoria" name="nome_categoria"
                                 placeholder="Digite sua Categoria...">
                             <label for="cadastro-rapido-categoria">Digite sua Categoria...</label>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-lg btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-lg btn-primary">Cadastrar</button>
                     </div>
                 </form>
             </div>
@@ -196,7 +200,7 @@
                     <h1 class="modal-title fs-5" id="subCategoriaModalLabel">SubCategoria</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{Route('CriarSubCategoriaProduto')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-floating mb-2 text-dark">
@@ -221,5 +225,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function buscarSubCategoriaPorCategoria(){
+            const categoriaId = document.getElementById('SelectCategoriaId').value
+            console.log(categoriaId);
+            const url = window.location.href.split('?');
+            window.location.href=url[0]+'?categoriaId='+categoriaId;
+            console.log(url);
+        }
+    </script>
 
     </x-layout>

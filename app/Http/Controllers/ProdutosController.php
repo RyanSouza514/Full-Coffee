@@ -15,15 +15,26 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        $produtos = DB::table('produtos')
-        ->join('categorias', 'produtos.categoria_id', '=', 'categorias.id')
+        // $produtos = DB::table('produtos')
+        // ->join('categorias', 'produtos.categoria_id', '=', 'categorias.id')
+        // ->join('subcategorias', 'produtos.subcategoria_id', '=', 'subcategorias.id')
+        // ->select('produtos.*', 'categorias.nome_categoria', 'subcategorias.nome_subcategoria')
+        // ->get();
+
+        $produtos = Produtos::join('categorias', 'produtos.categoria_id', '=', 'categorias.id')
         ->join('subcategorias', 'produtos.subcategoria_id', '=', 'subcategorias.id')
         ->select('produtos.*', 'categorias.nome_categoria', 'subcategorias.nome_subcategoria')
         ->get(); 
 
         $categoria = Categoria::all();
-        $subcategoria = Subcategoria::all();
+        $subcategoria = [];
 
+        if(isset($_GET['categoriaId'])) {
+            $subcategoria = Subcategoria::where('categoria_id', '=', $_GET['categoriaId'])
+            ->get(); 
+        }
+
+        // print_r($produtos);
         // dd($produtos);
         // return view('admin.dash-produtos',
         //  ['produtos' => $produtos],['categoria' => $categoria], ['subcategoria' => $subcategoria] );
@@ -34,19 +45,19 @@ class ProdutosController extends Controller
         ]);
         
     }
-    public function SalvarSubcategoriaModal(Request $request)
-    {
-        $validacao = $request->validate([
-            "nome_subcategoria"=>["required","string"],
-            "categoria_id"=>["required"]         
-        ]);
+    // public function SalvarSubcategoriaModal(Request $request)
+    // {
+    //     $validacao = $request->validate([
+    //         "nome_subcategoria"=>["required","string"],
+    //         "categoria_id"=>["required"]         
+    //     ]);
 
-        Subcategoria::create($validacao);
+    //     Subcategoria::create($validacao);
         
-        return redirect(route('Produtos.index'))->with('sucesso', 'SubCategoria Cadastrada com sucesso!');
+    //     return redirect(route('Produtos.index'))->with('sucesso', 'SubCategoria Cadastrada com sucesso!');
    
         
-    }
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -69,7 +80,7 @@ class ProdutosController extends Controller
             $produtoAtivo = false;
         }
         
-        // $request->all()['preco'] = number_format($request->all()['preco'], 2);
+        $request->all()['preco'] = number_format($request->all()['preco'], 2);
         // dd("Chegou aqui 2");
         $validacao = $request->validate([
             "categoria_id"=>["required"],
@@ -130,6 +141,9 @@ class ProdutosController extends Controller
      */
     public function destroy(string $id)
     {
-        
+        $produtos = Produtos::findOrFail($id);
+        $produtos->delete();
+        return redirect()->route('Produtos.index')
+        ->with('deleted-success', 'Categoria deleteda com successo');
     }
 }

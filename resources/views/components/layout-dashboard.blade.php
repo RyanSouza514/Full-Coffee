@@ -151,5 +151,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     
+
+    <!------- MENSAGEM DE RETORNO PARA USUARIO ------->
+    
+    @if(session('save-success'))
+        <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
+            style="top: 20px; right: 20px; z-index: 9999;">
+            {{ session('save-success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if(session('deleted-success'))
+        <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
+            style="top: 20px; right: 20px; z-index: 9999;">
+            {{ session('deleted-success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
 </body>
 </html>

@@ -45,9 +45,13 @@
                                         <td>{{$cat->id}}</td>
                                         <td>{{$cat->nome_categoria}}</td>
                                         <td class="d-flex justify-content-center">
-                                            <button class="btn btn-outline-primary btn-sm me-2">
-                                                <i class="bi bi-pencil-square" title="Editar"></i>
-                                            </button>
+
+                                            <form action="{{route('Categorias.edit', $cat)}}">
+                                                <button class="btn btn-outline-primary btn-sm me-2">
+                                                    <i class="bi bi-pencil-square" title="Editar"></i>
+                                                </button>
+                                            </form>
+
                                             <form action="{{Route('Categorias.destroy', $cat)}}" method="POST">
                                                 @csrf
                                                 @method("DELETE")
@@ -66,10 +70,37 @@
         </div>
     </div>
     <!-- --- FINAL conteudo -->
+     
+
+    <!-- Modal: EDTAR CATEGORIAAAAA -->
+    <!-- <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="categoriaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-light  ">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="categoriaModalLabel">Categoria EDITAR</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="FormEditarCategoria" method="POST">
+                    @csrf
+                    @method("PUT")
+                    <div class="modal-body">
+                        <div class="form-floating mb-2 text-dark">
+                            <input type="hidden" class="form-control" name="id" id="categoriaId">
+                            <input type="text" class="form-control" name="nome_categoria" id="categoriaNome">
+                            -- <label for="cadastro-rapido-categoria">Digite sua Categoria...</label> -
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-lg btn-primary">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
 
     <!------- MENSAGEM DE RETORNO PARA USUARIO ------->
 
-    @if(session('save-success'))
+    <!-- @if(session('save-success'))
         <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
             style="top: 20px; right: 20px; z-index: 9999;">
             {{ session('save-success') }}
@@ -90,7 +121,7 @@
             {{ session('deleted-success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif
+    @endif -->
 
     <script>
         // Tornar o alerta flutuante temporário

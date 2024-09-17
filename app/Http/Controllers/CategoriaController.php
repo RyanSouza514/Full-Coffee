@@ -28,31 +28,34 @@ class CategoriaController extends Controller{
         
         return redirect()->route('Categorias.index')->with('save-success', 'Categoria cadastrada com sucesso!');
     }
+    public function storeCategoriaProduto(Request $request)
+    {
+        $validacao = $request->validate([
+            "nome_categoria"=>["required","string"]     
+        ]);
 
-
+        Categoria::create($validacao);
+        
+        return redirect()->route('Produtos.index')->with('save-success', 'Categoria cadastrada com sucesso!');
+    }
     public function show($id)
     {
-        // $categorias = Categoria::find($id);
-        // return view('dashboard', compact('categoria'));
+        //
     }
 
     public function edit($id)
     {
-        // $categorias = Categoria::find($id);
-        // return view('dashboard', compact('categoria'));
+        $cat = Categoria::findOrFail($id);       
+        return view('Categorias.edit' ,["cat" => $cat]);
     }
 
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'categoria' => 'required|string|max:255',
-        // ]);
+        Categoria::where('id', $id)->update([
+            "nome_categoria"=> $request->all()['nome_categoria']
+        ]);
 
-        // $categoria = Categoria::find($id);
-        // $categoria->name = $request->input('categoria');
-        // $categoria->save();
-
-        // return redirect()->route('dash.categoriaStore')->with('success', 'Categoria atualizada com sucesso!');
+        return redirect('Categorias.index');
     }
 
     
