@@ -193,7 +193,7 @@
                           
                           <form action="{{Route('home.store')}}" method="post" enctype="multipart/form-data">
                               @csrf
-                            <div class="mb-3">
+                            <div class="mb-3 custom-form">
                                 <label for="nome" class="form-label">Nome:</label>
                                 <input required type="text" class="form-control" id="nome"
                                     placeholder="Digite seu Nome" name="nome">

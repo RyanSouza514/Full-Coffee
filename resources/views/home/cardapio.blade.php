@@ -248,7 +248,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card 7: Mocha -->
+                                <!-- Card 7: Mocha Caramelo-->
                                 <div class="col-md-4 mb-3">
                                     <div class="card mb-3 card-custom">
                                         <div class="row g-0">
@@ -1335,7 +1335,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card para Soda ICranberry -->
+                        <!-- Card para Soda Cranberry -->
                         <div class="col-md-4 mb-3">
                             <div class="card mb-3 card-custom">
                                 <div class="row g-0">
@@ -1349,7 +1349,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodacramberry-sa.webp')}}"="img-fluid rounded-start"
+                                        <img src="{{Vite::asset('resources/assets/img/img-cardapio/sodacramberry-sa.webp')}}"class="img-fluid rounded-start"
                                             alt="Soda Italiana de Cranberry">
                                     </div>
                                 </div>

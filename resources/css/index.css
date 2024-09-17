@@ -268,6 +268,11 @@ img {
     font-weight: 400;
     font-style: normal;
     color: #DCB26D;
+    
+}
+.form-control{
+    width: 100%;
+    max-width: 500px;
 }
 
 /* Alterando a cor da seção formulário */
@@ -280,6 +285,8 @@ img {
     resize: none;
     height: 120px;
   }
+  
+  
 
 /* Estilizando o Maps */
 .mapa-embed {
