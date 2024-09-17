@@ -1,6 +1,6 @@
 <x-layout-dashboard>
     <!-- --- Inicio conteudo -->
-    <form method="post" action="{{ Route('login.cadastrarUsuario') }}">
+    <form action="{{Route('Usuario.cadastrarUsuario')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="container mt-5">
             <div class="row justify-content-center">

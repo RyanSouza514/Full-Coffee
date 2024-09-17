@@ -51,7 +51,7 @@
                         <a class="nav-link" href="#destaques">Destaques</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a class="nav-link" href="#page-contato">Contato</a>
+                        <a class="nav-link" href="#contato">Contato</a>
                     </li>
                     <form class="d-flex align-items-center ms-3">
                         <a href="{{Route('cardapio.index')}}">

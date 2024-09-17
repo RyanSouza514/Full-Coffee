@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contato;
 
 class indexController extends Controller
 {
@@ -28,7 +29,16 @@ class indexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validacao = $request->validate([
+            "nome" =>["required", "string"],
+            "email" =>["required", "string"],
+            "telefone" =>["required", "string"],
+            "mensagem" =>["required", "string"],
+        ]);
+
+        Contato::create($validacao);
+        return redirect("home#contato")->with("sucesso","Sua mensagem foi enviada com sucesso");
+    
     }
 
     /**
