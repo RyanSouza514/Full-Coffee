@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
     <title>Full Coffee</title>
-    <link rel="icon" href="{{Vite::asset('resources/assets/icons/icon-logo-coffee.png')}}"type="image/icon type">
+    <link rel="icon" href="{{ Vite::asset('resources/assets/icons/icon-logo-coffee.png') }}" type="image/png">
+
 
     <!--ESTILIZAÇÃO BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -14,15 +16,12 @@
     <!--iCONS BOOTSTRAP-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!--ESTILIZAÇÃO PERSONALIZADA-->
-    <!-- <link rel="stylesheet" href="src/assets/CSS/style.css">
-    <link rel="stylesheet" href="src/assets/css/index.css">
-    <link rel="stylesheet" href="src/assets/CSS/generic/normalize.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     @vite('resources/css/indexLayout.css')
     @vite('resources/css/cardapio.css')
     @vite('resources/css/generic/normalize.css')
     <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
 
 </head>
 

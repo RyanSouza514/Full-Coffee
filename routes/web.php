@@ -9,10 +9,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\indexController;
 
-// Route::get('/', function () {
-//     return view('home.index');
-
-// });
+Route::get('/', [indexController::class, 'index']);
 
 
 // Route::get('/dash/categoria', [CategoriaController::class, 'index'])->name('dash.categoria');
