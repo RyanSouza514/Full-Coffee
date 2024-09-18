@@ -10,59 +10,64 @@ class CategoriaController extends Controller{
     public function index()
     {
         $categorias = Categoria::all();
-        return view('dashboard', compact('categorias'));
+        return view('admin.dash-categorias', ['categorias' => $categorias]);
     }
 
     public function create()
     {
-        return view('dashboard'); // same view as index, but with an empty form
+        // return view('dashboard'); // same view as index, but with an empty form
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'categoria' => 'required|string|max:255',
+        $validacao = $request->validate([
+            "nome_categoria"=>["required","string"]     
         ]);
 
-        $categorias = new Categoria();
-        $categorias->name = $request->input('categoria');
-        $categorias->save();
-
-        return redirect()->route('dash.categoriaStore')->with('success', 'Categoria criada com sucesso!');
+        Categoria::create($validacao);
+        
+        return redirect()->route('Categorias.index')->with('save-success', 'Categoria cadastrada com sucesso!');
     }
+    public function storeCategoriaProduto(Request $request)
+    {
+        $validacao = $request->validate([
+            "nome_categoria"=>["required","string"]     
+        ]);
 
-
+        Categoria::create($validacao);
+        
+        return redirect()->route('Produtos.index')->with('save-success', 'Categoria cadastrada com sucesso!');
+    }
     public function show($id)
     {
-        $categorias = Categoria::find($id);
-        return view('dashboard', compact('categoria'));
+        //
     }
 
     public function edit($id)
     {
-        $categorias = Categoria::find($id);
-        return view('dashboard', compact('categoria'));
+        $cat = Categoria::findOrFail($id);       
+        return view('Categorias.edit' ,["cat" => $cat]);
     }
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'categoria' => 'required|string|max:255',
+        Categoria::where('id', $id)->update([
+            "nome_categoria"=> $request->all()['nome_categoria']
         ]);
 
-        $categoria = Categoria::find($id);
-        $categoria->name = $request->input('categoria');
-        $categoria->save();
-
-        return redirect()->route('dash.categoriaStore')->with('success', 'Categoria atualizada com sucesso!');
+        return redirect('Categorias.index');
     }
 
     
     public function destroy($id)
     {
-        $categoria = Categoria::find($id);
-        $categoria->delete();
+        // echo "<script>alert('Deseja excluir a postagem?);</script>";
 
-        return redirect()->route('dash.categoriaStore')->with('success', 'Categoria excluída com sucesso!');
+        $categoria = Categoria::findOrFail($id);
+        $categoria->delete();
+        return redirect()->route('Categorias.index')
+        ->with('deleted-success', 'Categoria deleteda com successo');
+
+        
     }
 }

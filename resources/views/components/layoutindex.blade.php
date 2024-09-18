@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Full Coffee</title>
-    <link rel="icon" href="src/assets/icons/icon-coffe.png" type="image/icon type">
+    <link rel="icon" href="{{Vite::asset('resources/assets/icons/icon-logo-coffee.png')}}"type="image/icon type">
 
     <!--ESTILIZAÇÃO BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -18,7 +18,8 @@
     <!-- <link rel="stylesheet" href="src/assets/CSS/style.css">
     <link rel="stylesheet" href="src/assets/css/index.css">
     <link rel="stylesheet" href="src/assets/CSS/generic/normalize.css"> -->
-    @vite('resources/css/index.css')
+    @vite('resources/css/indexLayout.css')
+    @vite('resources/css/cardapio.css')
     @vite('resources/css/generic/normalize.css')
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -41,7 +42,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link ms-3" href="#home">Home</a>
+                        <a class="nav-link ms-3" href="{{Route('home.index')}}">Home</a>
                     </li>
                     <li class="nav-item ms-3">
                         <a class="nav-link" href="#quem-somos">Quem Somos</a>
@@ -50,10 +51,10 @@
                         <a class="nav-link" href="#destaques">Destaques</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a class="nav-link" href="#page-contato">Contato</a>
+                        <a class="nav-link" href="#contato">Contato</a>
                     </li>
                     <form class="d-flex align-items-center ms-3">
-                        <a href="#page-cardapio">
+                        <a href="{{Route('cardapio.index')}}">
                             <button class="btn btn-outline-success btn-custom" type="button">Cardápio</button>
                         </a>
                     </form>

@@ -41,7 +41,19 @@ class SubCategoriaController extends Controller
 
         Subcategoria::create($validacao);
         
-        return redirect(route('SubCategoria.index'))->with('sucesso', 'SubCategoria Cadastro com sucesso!');
+        return redirect(route('SubCategoria.index'))->with('sucesso', 'SubCategoria Cadastrada com sucesso!');
+    }
+
+    public function storeSubCategoriaProduto(Request $request)
+    {
+        $validacao = $request->validate([
+            "nome_subcategoria"=>["required","string"],
+            "categoria_id"=>["required"]         
+        ]);
+
+        Subcategoria::create($validacao);
+        
+        return redirect(route('Produtos.index'))->with('sucesso', 'SubCategoria Cadastrada com sucesso!');
     }
 
     /**

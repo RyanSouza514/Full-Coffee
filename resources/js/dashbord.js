@@ -37,36 +37,47 @@ verConfirmeSenha.addEventListener('click', ()=> {
     }
 })
 
-
-
-
-function validacaoEmail(field) {
-    let usuario = field.value.substring(0, field.value.indexOf("@"));
-    let dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
-
-    if ((usuario.length >= 1) &&
-        (dominio.length >= 3) &&
-        (usuario.search("@") == -1) &&
-        (dominio.search("@") == -1) &&
-        (usuario.search(" ") == -1) &&
-        (dominio.search(" ") == -1) &&
-        (dominio.search(".") != -1) &&
-        (dominio.indexOf(".") >= 1) &&
-        (dominio.lastIndexOf(".") < dominio.length - 1)) {
-        // document.getElementById("msgemail").innerHTML = "E-mail válido";
-        alert("E-mail valido");
+// Configurar o alerta para desaparecer após 3 segundos
+setTimeout(function() {
+    let alert = document.getElementById('deleted-success');
+    if (alert) {
+        alert.classList.remove('show');
+        alert.classList.add('fade');
+        setTimeout(() => alert.remove(), 500); // Remover do DOM após o fade out
     }
-    else {
-        // document.getElementById("msgemail").innerHTML = "<font color='red'>E-mail inválido </font>";
-        alert("E-mail invalido");
-        // inputEmail.focus();
-    }
-}
+}, 3000); // 3000 milissegundos = 3 segundos
 
-function verificarTodosDados() {
-    // verificarTamanhoSenha();
-    // validacaoEmail(UsuarioEmail);
-}
+
+
+
+
+// function validacaoEmail(field) {
+//     let usuario = field.value.substring(0, field.value.indexOf("@"));
+//     let dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
+
+//     if ((usuario.length >= 1) &&
+//         (dominio.length >= 3) &&
+//         (usuario.search("@") == -1) &&
+//         (dominio.search("@") == -1) &&
+//         (usuario.search(" ") == -1) &&
+//         (dominio.search(" ") == -1) &&
+//         (dominio.search(".") != -1) &&
+//         (dominio.indexOf(".") >= 1) &&
+//         (dominio.lastIndexOf(".") < dominio.length - 1)) {
+//         // document.getElementById("msgemail").innerHTML = "E-mail válido";
+//         alert("E-mail valido");
+//     }
+//     else {
+//         // document.getElementById("msgemail").innerHTML = "<font color='red'>E-mail inválido </font>";
+//         alert("E-mail invalido");
+//         // inputEmail.focus();
+//     }
+// }
+
+// function verificarTodosDados() {
+//     // verificarTamanhoSenha();
+//     // validacaoEmail(UsuarioEmail);
+// }
 
 
 
@@ -78,26 +89,26 @@ function verificarTodosDados() {
 ####################################################
 */
 
-function verificarCadastroCategoria() {
+// function verificarCadastroCategoria() {
 
-    const inputCategoria = document.querySelector('#categoriaNome');
-    const msgErro = document.querySelector('#msg-erro-cat');
+//     const inputCategoria = document.querySelector('#categoriaNome');
+//     const msgErro = document.querySelector('#msg-erro-cat');
 
-    if(inputCategoria.value == "") {
-        // alert("Favor prencher campo!");
-        inputCategoria.classList.add('border-danger');
-        msgErro.innerHTML = "Favor preencher o campo!";
-        event.preventDefault();
-    }else{
-        msgErro.innerHTML = "";
-        inputCategoria.classList.remove('border-danger');
-        salvarCategorias();
-    }
-}
+//     if(inputCategoria.value == "") {
+//         // alert("Favor prencher campo!");
+//         inputCategoria.classList.add('border-danger');
+//         msgErro.innerHTML = "Favor preencher o campo!";
+//         event.preventDefault();
+//     }else{
+//         msgErro.innerHTML = "";
+//         inputCategoria.classList.remove('border-danger');
+//         salvarCategorias();
+//     }
+// }
 
-function salvarCategorias(){
-    alert("Categoria Salvar com Sucesso");
-}
+// function salvarCategorias(){
+//     alert("Categoria Salvar com Sucesso");
+// }
 
 
 
@@ -108,69 +119,69 @@ function salvarCategorias(){
 ####################################################
 */
 
-function verificarCampoNome(){
+// function verificarCampoNome(){
 
-    const msgErro = document.querySelector('#msg-erro-nome');
+//     const msgErro = document.querySelector('#msg-erro-nome');
 
-    if(inputNomeUsuario.value.length < 3) {
-        inputNomeUsuario.classList.add('border-danger');
-        msgErro.innerHTML = "*O Nome deve ter pelo menos 3 caracteres.";
-        inputSenha.focus();
-        event.preventDefault();
-    }
-}
+//     if(inputNomeUsuario.value.length < 3) {
+//         inputNomeUsuario.classList.add('border-danger');
+//         msgErro.innerHTML = "*O Nome deve ter pelo menos 3 caracteres.";
+//         inputSenha.focus();
+//         event.preventDefault();
+//     }
+// }
 
-function verificarCampoSenha() {
+// function verificarCampoSenha() {
 
-    const msgErro = document.querySelector('#msg-erro1');
+//     const msgErro = document.querySelector('#msg-erro1');
 
-    if (inputSenha.value == "") {
+//     if (inputSenha.value == "") {
         
-        inputSenha.classList.add('border-danger');
-        msgErro.innerHTML = "Favor preencher o campo!";
-        inputSenha.focus();
-        event.preventDefault();
+//         inputSenha.classList.add('border-danger');
+//         msgErro.innerHTML = "Favor preencher o campo!";
+//         inputSenha.focus();
+//         event.preventDefault();
 
-    } else if (inputSenha.value.length < 4) {
+//     } else if (inputSenha.value.length < 4) {
 
-        inputSenha.classList.add('border-danger');
-        msgErro.innerHTML = "A senha deve ter pelo menos 4 caracteres.";
-        inputSenha.focus();
-        event.preventDefault();
+//         inputSenha.classList.add('border-danger');
+//         msgErro.innerHTML = "A senha deve ter pelo menos 4 caracteres.";
+//         inputSenha.focus();
+//         event.preventDefault();
 
-    } else {
-        msgErro.innerHTML = "";
-        inputSenha.classList.remove('border-danger');
-        // salvarUsuarios();
-    }
-}
+//     } else {
+//         msgErro.innerHTML = "";
+//         inputSenha.classList.remove('border-danger');
+//         // salvarUsuarios();
+//     }
+// }
 
-function verificarCampoConfirmarSenha() {
+// function verificarCampoConfirmarSenha() {
 
-    const msgErro = document.querySelector('#msg-erro2');
+//     const msgErro = document.querySelector('#msg-erro2');
 
-    if (inputConfirmarSenha.value == "") {
+//     if (inputConfirmarSenha.value == "") {
         
-        inputConfirmarSenha.classList.add('border-danger');
-        msgErro.innerHTML = "Favor preencher o campo!";
-        inputConfirmarSenha.focus();
-        event.preventDefault();
+//         inputConfirmarSenha.classList.add('border-danger');
+//         msgErro.innerHTML = "Favor preencher o campo!";
+//         inputConfirmarSenha.focus();
+//         event.preventDefault();
 
-    }else if(inputConfirmarSenha.value != inputSenha.value) {
-        alert("Senhas não conferem, favor verificar campos");
+//     }else if(inputConfirmarSenha.value != inputSenha.value) {
+//         alert("Senhas não conferem, favor verificar campos");
 
-    }else {
-        msgErro.innerHTML = "";
-        inputConfirmarSenha.classList.remove('border-danger');
-        // salvarUsuarios();
-    }
-}
+//     }else {
+//         msgErro.innerHTML = "";
+//         inputConfirmarSenha.classList.remove('border-danger');
+//         // salvarUsuarios();
+//     }
+// }
 
 
-function salvarUsuarios(){
-    // alert("Usuario Cadastrado com Sucesso");
-    verificarCampoNome();
-}
+// function salvarUsuarios(){
+//     // alert("Usuario Cadastrado com Sucesso");
+//     verificarCampoNome();
+// }
 
 
 // function verificarTamanhoSenha() {
@@ -184,3 +195,7 @@ function salvarUsuarios(){
         
 //     }
 // }
+
+
+
+

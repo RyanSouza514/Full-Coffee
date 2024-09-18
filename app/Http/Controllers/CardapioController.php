@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contato;
 use Illuminate\Http\Request;
 
-class ContatoController extends Controller
+class CardapioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('home.cardapio');
     }
 
     /**
@@ -28,15 +27,7 @@ class ContatoController extends Controller
      */
     public function store(Request $request)
     {
-        $validacao = $request->validate([
-            "nome" =>["required", "string"],
-            "email" =>["required", "string"],
-            "telefone" =>["required", "string"],
-            "mensagem" =>["required", "string"],
-        ]);
-
-        Contato::create($validacao);
-        return redirect("/#page-contato")->with("sucesso","Sua mensagem foi enviada com sucesso");
+        //
     }
 
     /**

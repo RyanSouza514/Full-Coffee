@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dashbord - Adminstrador</title>
-    <link rel="icon" href="../assets/icons/icon-dashboard.png" type="image/icon type">
+    <link rel="icon" href="{{Vite::asset('resources/assets/icons/icon-dashboard.png')}}" type="image/icon type">
 
     <!--ESTILIZAÇÃO BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -40,7 +40,7 @@
                         </li>
     
                         <li>
-                            <a href="dash-mensagem.html" class="nav-link px-0 align-middle">
+                            <a href="{{Route('Mensagem.index')}}" class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dash</span> 
                                 <span class="d-none d-sm-inline d-md-none d-lg-inline">de</span>
                                 <span class="d-none d-sm-inline d-md-none d-lg-inline d-xl-inline">Mensagens</span>
@@ -60,7 +60,7 @@
                                     </a>
                                 </li>
                                 <li class="w-100">
-                                    <a href="dash-categorias.html" class="nav-link px-0"> 
+                                    <a href="{{Route(name: 'Categorias.index')}}" class="nav-link px-0"> 
                                         <span class="d-none d-sm-inline">Categorias</span>
                                         <span class="d-inline d-sm-none">Cat</span>
                                     </a>
@@ -72,7 +72,7 @@
                                     </a>
                                 </li>
                                 <li class="w-100">
-                                    <a href="dash-usuario.html" class="nav-link px-0">
+                                    <a href="{{Route('Usuario.index')}}" class="nav-link px-0">
                                         <span class="d-none d-sm-inline">Usuarios</span>
                                         <span class="d-inline d-sm-none">User</span>
                                     </a>
@@ -145,11 +145,30 @@
     </div>  
 
     <!--Script Personalizado-->
-    <script src=""></script>
+    <!-- <script src="@vite('resources/js/dashbord.js')"></script> -->
 
     <!--Script BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     
+
+    <!------- MENSAGEM DE RETORNO PARA USUARIO ------->
+    
+    @if(session('save-success'))
+        <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
+            style="top: 20px; right: 20px; z-index: 9999;">
+            {{ session('save-success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if(session('deleted-success'))
+        <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
+            style="top: 20px; right: 20px; z-index: 9999;">
+            {{ session('deleted-success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
 </body>
 </html>
