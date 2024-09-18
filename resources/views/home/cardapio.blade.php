@@ -1,6 +1,6 @@
 <x-layoutindex>                             
 
-    @vite('resources\assets\css\cardapio.css')
+    <!-- @vite('resources\assets\css\cardapio.css') -->
     <!-- Carrossel com Imagem -->
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-inner">

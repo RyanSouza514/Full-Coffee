@@ -51,11 +51,14 @@ class CategoriaController extends Controller{
 
     public function update(Request $request, $id)
     {
-        Categoria::where('id', $id)->update([
-            "nome_categoria"=> $request->all()['nome_categoria']
+        $validacao = $request->all();
+
+        
+        Categoria::where('id',  $validacao["id"])->update([
+            "nome_categoria"=>  $validacao['nome_categoria']
         ]);
 
-        return redirect('Categorias.index');
+        return redirect()->route('Categorias.index')->with('save-success', 'Categoria atualizada com sucesso!');
     }
 
     
