@@ -85,7 +85,7 @@ header h1 {
     align-items: center;
 }
 
-.form-control {
+#search .form-control {
     padding-right: 2.5rem;
     width: 300px;
 }

@@ -46,6 +46,7 @@ Route::resource('/Dashbord/SubCategoria', SubCategoriaController::class);
 
 //ROTAS TELA DE SUBCATEGORIA
 Route::resource('/Dashbord/Categorias', CategoriaController::class);
+Route::put('/Dashbord/Categorias/edit', [CategoriaController::class, 'update'])->name('Categorias.update');
 
 // ROTAS CADASTRO DE USUARIO SISTEMA
 Route::get('/Dashbord/Usuario', [UserController::class, 'index'])->name('Usuario.index');
