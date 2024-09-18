@@ -52,7 +52,6 @@ class CategoriaController extends Controller{
     public function update(Request $request, $id)
     {
         $validacao = $request->all();
-
         
         Categoria::where('id',  $validacao["id"])->update([
             "nome_categoria"=>  $validacao['nome_categoria']

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subcategoria;
+use App\Models\Categoria;
 use Illuminate\Support\Facades\DB;
 
 class SubCategoriaController extends Controller
@@ -18,7 +19,9 @@ class SubCategoriaController extends Controller
         ->select('categorias.nome_categoria', 'subcategorias.nome_subcategoria', 'subcategorias.id')
         ->get();
 
-        return view("admin.dash-subcategorias", ['subcategoria' => $subcategoria]);
+        $categorias = Categoria::all();
+
+        return view("admin.dash-subcategorias", ['subcategoria' => $subcategoria, 'categorias' => $categorias]);
     }
 
     /**
@@ -77,7 +80,16 @@ class SubCategoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validacao = $request->all();
+        
+        Subcategoria::where('id',  $validacao["id"])->update([
+            "nome_subcategoria"=>  $validacao['nome_subcategoria'],
+            "categoria_id"=> $validacao['categoria_id']
+
+        ]);
+
+        return redirect()->route('SubCategoria.index')->with('save-success', 'Subcategoria atualizada com sucesso!');
+    
     }
 
     /**
@@ -85,6 +97,9 @@ class SubCategoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $subcategoria = Subcategoria::findOrFail($id);
+        $subcategoria->delete();
+        return redirect()->route('SubCategoria.index')
+        ->with('deleted-success', 'SubCategoria deleteda com successo');
     }
 }
