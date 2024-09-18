@@ -46,31 +46,38 @@
                                     <td>{{$cat->nome_categoria}}</td>
                                     <td class="d-flex justify-content-center">
 
-
                                         <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal"
                                             data-bs-target="#edit-modal{{$cat->id}}">
                                             <i class="bi bi-pencil-square" title="Editar"></i>
                                         </button>
 
-                                        <div class="modal fade" id="edit-modal{{$cat->id}}" tabindex="-1" aria-labelledby="categoriaModalLabel" aria-hidden="true">
+                                        <!-- Modal: EDTAR CATEGORIAA -->
+                                        <div class="modal fade" id="edit-modal{{$cat->id}}" tabindex="-1"
+                                            aria-labelledby="categoriaModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content bg-light  ">
                                                     <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="categoriaModalLabel"> Editar Categoria</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <h1 class="modal-title fs-5" id="categoriaModalLabel"> Editar
+                                                            Categoria</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
                                                     </div>
-                                                    <form id="FormEditarCategoria" method="POST" action="{{Route("Categorias.update")}}">
+                                                    <form id="FormEditarCategoria" method="POST"
+                                                        action="{{Route("Categorias.update")}}">
                                                         @csrf
                                                         @method("PUT")
                                                         <div class="modal-body">
                                                             <div class="form-floating mb-2 text-dark">
-                                                                <input type="hidden" class="form-control" name="id" id="categoriaId" value="{{$cat->id}}">
-                                                                <input type="text" class="form-control" name="nome_categoria" id="categoriaNome" value="{{$cat->nome_categoria}}">
-
+                                                                <input type="hidden" class="form-control" name="id"
+                                                                    id="categoriaId" value="{{$cat->id}}">
+                                                                <input type="text" class="form-control"
+                                                                    name="nome_categoria" id="categoriaNome"
+                                                                    value="{{$cat->nome_categoria}}">
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-lg btn-primary">Cadastrar</button>
+                                                            <button type="submit"
+                                                                class="btn btn-lg btn-success">Atualizar</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -84,9 +91,6 @@
                                                 <i class="bi bi-x-circle-fill" title="Excluir"></i>
                                             </button>
                                         </form>
-
-                                        <!-- Modal: EDTAR CATEGORIAAAAA -->
-
                                     </td>
                                 </tr>
                                 @endforeach
@@ -128,15 +132,15 @@
     @endif -->
 
     <script>
-        // Tornar o alerta flutuante temporário
-        setTimeout(function() {
-            let alert = document.getElementById('alertTemp');
-            if (alert) {
-                alert.classList.remove('show');
-                alert.classList.add('fade');
-                setTimeout(() => alert.remove(), 500);
-            }
-        }, 3000); // Alerta desaparecerá após 3 segundos
+    // Tornar o alerta flutuante temporário
+    setTimeout(function() {
+        let alert = document.getElementById('alertTemp');
+        if (alert) {
+            alert.classList.remove('show');
+            alert.classList.add('fade');
+            setTimeout(() => alert.remove(), 500);
+        }
+    }, 3000); // Alerta desaparecerá após 3 segundos
     </script>
 
     </x-layout-dashbord>

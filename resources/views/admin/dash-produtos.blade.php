@@ -14,7 +14,6 @@
                             <div class="alert alert-success">{{$mensagem}}</div>
                         @endif
 
-
                         <form action="{{Route('Produtos.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-2">
@@ -142,10 +141,103 @@
                                             {{$prod->nome_categoria}}/{{$prod->nome_subcategoria}}
                                         </td>
                                         <td>{{$prod->check == 1 ? 'Sim': 'Não';}}</td>
+
                                         <td class="d-flex justify-content-center">
-                                            <button class="btn btn-outline-primary btn-sm me-2">
+
+                                            <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal"
+                                            data-bs-target="#edit-modal-produtos{{$prod->id}}">
                                                 <i class="bi bi-pencil-square" title="Editar"></i>
                                             </button>
+
+                                            <!-- Modal: Editar Cadastro de Produtos -->
+                                            <div class="modal fade" id="edit-modal-produtos{{$prod->id}}" tabindex="-1" aria-labelledby="produtosModalLabel"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content bg-light  ">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5" id="produtosModalLabel">Editar Produto</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <form action="{{Route('Produtos.update')}}" method="post" enctype="multipart/form-data">
+                                                            @csrf
+                                                            @method("PUT")
+                                                            <div class="modal-body">
+                                                                    <div class="mb-2">
+                                                                        <label for="" class="form-label fw-medium">Selecione a Categoria</label>
+                                                                        <div class="input-group">
+                                                                            <select class="form-select" name="categoria_id" id="SelectCategoriaId">
+                                                                                <option>Selecione uma opção</option>
+                                                                                @foreach ($categoria as $cat)
+                                                                                    <option {{$cat->id == $prod->categoria_id ? 'selected': ''}}
+                                                                                     value="{{$cat->id}}">{{$cat->nome_categoria }}</option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="" class="form-label fw-medium">Selecione a SubCategoria</label>
+                                                                        <div class="input-group">
+                                                                            <select class="form-select" name="subcategoria_id">
+                                                                                <option selected>Selecione uma opção</option>
+                                                                                @foreach ($subcategoriaModalEditar as $subModalEditar)
+                                                                                    <option {{$subModalEditar->id == $prod->subcategoria_id ? 'selected' : ''}}
+                                                                                    value="{{$subModalEditar->id}}">{{$subModalEditar->nome_subcategoria}}</option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-8 mb-3">
+                                                                            <label for="nome_produto" class="form-label fw-medium">Nome do Produto</label>
+                                                                            <input type="hidden" class="form-control" name="id" value="{{$prod->id}}">
+                                                                            <input type="text" class="form-control" id="nome_produto" name="nome_produto" value="{{$prod->nome_produto}}">
+                                                                        </div>
+                                                                        <div class="col-md-4 mb-3">
+                                                                            <label for="preco" class="form-label fw-medium text-success">Preço R$</label>
+                                                                            <input type="number" step="0.01" class="form-control border-2 border-success"
+                                                                                id="preco" name="preco" value="{{$prod->preco}}">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="selecao-arquivo" class="form-label fw-medium">Alterar Imagem</label>
+                                                                        <img src="{{URL::asset('img/cardapio/'.$prod->imagem)}}" alt="" width="100px" height="auto">
+                                                                        <input class="form-control" type="file" id="selecao-arquivo" name="imagem">
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-lg   mb-2">
+                                                                            <label for="descricaoArea" class="form-label fw-medium">Descrição</label>
+                                                                            <div class="">
+                                                                                <textarea class="form-control txt-area-size" placeholder="" name="descricao"
+                                                                                    id="descricaoArea">{{$prod->descricao}}</textarea>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-lg  mb-2">
+                                                                            <label for="obsvacaoArea" class="form-label fw-medium">Observação</label>
+                                                                            <div class="">
+                                                                                <textarea class="form-control txt-area-size" name="observacao" placeholder=""
+                                                                                    id="obsvacaoArea">{{$prod->observacao}}</textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-check form-switch mt-2">
+                                                                        <input class="form-check-input" type="checkbox" role="switch" name="check"
+                                                                            id="desativarItemCheck" {{$prod->check ? 'checked': ''}}>
+                                                                        <label class="form-check-label fw-medium" for="desativarItemCheck">Ativo?</label>
+                                                                    </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-lg btn-success">Atualizar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <form action="{{Route('Produtos.destroy', $prod)}}" method="POST">
                                                 @csrf
                                                 @method("DELETE")
@@ -225,6 +317,8 @@
             </div>
         </div>
     </div>
+
+    
 
     <script>
         function buscarSubCategoriaPorCategoria(){

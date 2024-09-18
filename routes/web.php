@@ -40,9 +40,11 @@ Route::resource('/Dashbord/Mensagem', MensagemController::class);
 Route::resource('/Dashbord/Produtos', ProdutosController::class);
 Route::post('/Categoria/Criar', [CategoriaController::class,'storeCategoriaProduto'])->name('CriarCategoriaProduto');
 Route::post('/SubCategoria/Criar', [SubCategoriaController::class,'storeSubCategoriaProduto'])->name('CriarSubCategoriaProduto');
+Route::put('/Dashbord/Produtos/edit', [ProdutosController::class, 'update'])->name('Produtos.update');
 
 //ROTAS TELA DE SUBCATEGORIA
 Route::resource('/Dashbord/SubCategoria', SubCategoriaController::class);
+Route::put('/Dashbord/SubCategoria/edit', [SubCategoriaController::class, 'update'])->name('SubCategoria.update');
 
 //ROTAS TELA DE SUBCATEGORIA
 Route::resource('/Dashbord/Categorias', CategoriaController::class);

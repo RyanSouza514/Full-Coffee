@@ -22,16 +22,18 @@ class ProdutosController extends Controller
         // ->get();
 
         $produtos = Produtos::join('categorias', 'produtos.categoria_id', '=', 'categorias.id')
-        ->join('subcategorias', 'produtos.subcategoria_id', '=', 'subcategorias.id')
-        ->select('produtos.*', 'categorias.nome_categoria', 'subcategorias.nome_subcategoria')
-        ->get(); 
+            ->join('subcategorias', 'produtos.subcategoria_id', '=', 'subcategorias.id')
+            ->select('produtos.*', 'categorias.nome_categoria', 'subcategorias.nome_subcategoria')
+            ->orderBy('produtos.id')
+            ->get();
 
         $categoria = Categoria::all();
+        $subcategoriaModalEditar = Subcategoria::all();
         $subcategoria = [];
 
-        if(isset($_GET['categoriaId'])) {
+        if (isset($_GET['categoriaId'])) {
             $subcategoria = Subcategoria::where('categoria_id', '=', $_GET['categoriaId'])
-            ->get(); 
+                ->get();
         }
 
         // print_r($produtos);
@@ -41,24 +43,11 @@ class ProdutosController extends Controller
         return view('admin.dash-produtos', [
             'produtos' => $produtos,
             'categoria' => $categoria,
-            'subcategoria' => $subcategoria
+            'subcategoria' => $subcategoria,
+            'subcategoriaModalEditar' => $subcategoriaModalEditar
         ]);
-        
+
     }
-    // public function SalvarSubcategoriaModal(Request $request)
-    // {
-    //     $validacao = $request->validate([
-    //         "nome_subcategoria"=>["required","string"],
-    //         "categoria_id"=>["required"]         
-    //     ]);
-
-    //     Subcategoria::create($validacao);
-        
-    //     return redirect(route('Produtos.index'))->with('sucesso', 'SubCategoria Cadastrada com sucesso!');
-   
-        
-    // }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -72,44 +61,32 @@ class ProdutosController extends Controller
      */
     public function store(Request $request)
     {
-        // dd("Chegou aqui");
+        // if(isset($request->all()['check'])){
+        //     $produtoAtivo = true;
+        // }else{
+        //     $produtoAtivo = false;
+        // }
 
-        if(isset($request->all()['check'])){
-            $produtoAtivo = true;
-        }else{
-            $produtoAtivo = false;
-        }
-        
         $request->all()['preco'] = number_format($request->all()['preco'], 2);
-        // dd("Chegou aqui 2");
+
         $validacao = $request->validate([
-            "categoria_id"=>["required"],
-            "subcategoria_id"=>["required"],    
-            "nome_produto"=>["required","string"],
-            "preco"=>["required"],
-            "imagem"=>["required","extensions:jpg,png"],           
+            "categoria_id" => ["required"],
+            "subcategoria_id" => ["required"],
+            "nome_produto" => ["required", "string"],
+            "preco" => ["required"],
+            "imagem" => ["extensions:jpg,png,jpeg"],
+            "descricao" => ["string"],
+            "observacao" => ["string"]
         ]);
 
-        // dd("Chegou aqui 3");
+        $validacao['imagem'] = $this->uploadImagem($request);
 
-        if($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
-            $requestImagem = $request['imagem'];
-            $resquestImageName = $requestImagem->getClientOriginalName();
-            $requestImageExtension = $requestImagem->extension();
-
-            $newImageName = md5(uniqid() . $resquestImageName) . '.' . $requestImageExtension;
-
-            $requestImagem->move(public_path('img/cardapio/'), $newImageName);
-
-            $validacao['imagem'] = $newImageName;
-        }
-        
-        $validacao['check'] = $produtoAtivo;
+        $validacao['check'] = $this->validarCheck($request['check']);
 
         Produtos::create($validacao);
-        
+
         return redirect(route('Produtos.index'))->with('sucesso', 'Produto Cadastro com sucesso!');
-        
+
     }
 
     /**
@@ -133,7 +110,32 @@ class ProdutosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // print_r($request->all()); die();
+
+        $validacao = $request->all();
+
+        $validacao['check'] = $this->validarCheck($request['check']);
+
+        $imagem = $this->uploadImagem($request);
+
+        $dados = [
+            "categoria_id" => $validacao['categoria_id'],
+            "subcategoria_id" => $validacao['subcategoria_id'],
+            "nome_produto" => $validacao['nome_produto'],
+            "preco" => $validacao['preco'],
+            // "imagem"=> $validacao['imagem'],
+            "check" => $validacao['check'],
+            "descricao" => $validacao['descricao'],
+            "observacao" => $validacao['observacao']
+        ];
+
+        if ($imagem) {
+            $dados['imagem'] = $imagem;
+        }
+        Produtos::where('id', $validacao["id"])->update($dados);
+
+        return redirect()->route('Produtos.index')->with('save-success', 'Produto atualizado com sucesso!');
+
     }
 
     /**
@@ -142,8 +144,47 @@ class ProdutosController extends Controller
     public function destroy(string $id)
     {
         $produtos = Produtos::findOrFail($id);
+
+        // Verifica se o produto possui uma imagem e se o arquivo existe no sistema
+        if ($produtos->imagem != 'img-default.png' && file_exists(public_path('img/cardapio/' . $produtos->imagem))) {
+            // Deleta o arquivo de imagem
+            unlink(public_path('img/cardapio/' . $produtos->imagem));
+        }
+
         $produtos->delete();
         return redirect()->route('Produtos.index')
-        ->with('deleted-success', 'Categoria deleteda com successo');
+            ->with('deleted-success', 'Categoria deleteda com successo');
+    }
+
+    public function validarCheck($ativo)
+    {
+
+        if (isset($ativo)) {
+            $produtoAtivo = true;
+        } else {
+            $produtoAtivo = false;
+        }
+        return $produtoAtivo;
+    }
+
+    private function uploadImagem($request)
+    {
+
+        $imagem = null;
+
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+            $requestImagem = $request['imagem'];
+            $resquestImageName = $requestImagem->getClientOriginalName();
+            $requestImageExtension = $requestImagem->extension();
+
+            $newImageName = md5(uniqid() . $resquestImageName) . '.' . $requestImageExtension;
+
+            $requestImagem->move(public_path('img/cardapio/'), $newImageName);
+
+            $imagem = $newImageName;
+        } else {
+            $imagem = 'img-default.png';
+        }
+        return $imagem;
     }
 }
