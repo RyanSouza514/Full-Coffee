@@ -35,7 +35,7 @@
                     <!-- INCIO DA LISTA / HOME -->
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
-                            <a href="dashbord.html" class="nav-link align-middle px-0">
+                            <a href="{{Route('dashbord.index')}}" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
                             </a>
                         </li>
@@ -81,7 +81,7 @@
                             </ul>
                         </li>
     
-                        <li class="text-center text-sm-start">
+                        <!-- <li class="text-center text-sm-start">
                             <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-sm-0 align-middle ">
                                 <i class="fs-4 bi-clipboard-data"></i>
                                 <span class="ms-1 d-none d-sm-inline">Dados</span>
@@ -97,35 +97,35 @@
                                         <span class="d-none d-sm-inline">Item</span> 2</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
     
                         <li>
                             <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                               <i class="fs-4 bi-newspaper"></i> <span class="ms-1 d-none d-sm-inline">Relatórios</span></a>
                             <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Produtos</span> </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Avaliacões</span> </a>
                                 </li>
                             </ul>
                         </li>
     
-                        <li>
+                        <!-- <li>
                             <a href="#" class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                        </li>
+                        </li> -->
                     </ul>
 
                     <hr>
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../assets/icons/icon-admin.png" alt="hugenerd" width="25" height="25" class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-1">Administrador</span>
+                            <img src="{{Vite::asset('resources/assets/icons/icon-admin.png')}}" alt="hugenerd" width="25" height="25" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">Olá {{auth()->user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                            <li><a class="dropdown-item" href="#">Novo Projeto</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Novo Projeto</a></li> -->
                             <li><a class="dropdown-item" href="#">Configurações</a></li>
                             <li><a class="dropdown-item" href="#">Perfil</a></li>
                             <li>
@@ -138,7 +138,6 @@
                 </div>
             </div>
             <div class="col gradient-personalizado">
-
 
             {{$slot}}
 
@@ -164,6 +163,22 @@
         </div>
     @endif
 
+    @if(session('update-success'))
+        <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
+            style="top: 20px; right: 20px; z-index: 9999;">
+            {{ session('update-success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if(session('erro'))
+        <div id="alertTemp" class="alert alert-danger alert-dismissible fade show position-fixed" role="alert"
+            style="top: 20px; right: 20px; z-index: 9999;">
+            {{ session('erro') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     @if(session('deleted-success'))
         <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
             style="top: 20px; right: 20px; z-index: 9999;">
@@ -171,6 +186,18 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+
+    <script>
+    // Tornar o alerta flutuante temporário
+    setTimeout(function() {
+        let alert = document.getElementById('alertTemp');
+        if (alert) {
+            alert.classList.remove('show');
+            alert.classList.add('fade');
+            setTimeout(() => alert.remove(), 500);
+        }
+    }, 3000); // Alerta desaparecerá após 3 segundos
+    </script>
 
    
 </body>

@@ -1,4 +1,4 @@
-<x-layout-dashboard>
+<x-layout-dashboard title="Cadastro de Usuario">
     <!-- --- Inicio conteudo -->
     <form action="{{Route('Usuario.cadastrarUsuario')}}" method="post" enctype="multipart/form-data">
         @csrf

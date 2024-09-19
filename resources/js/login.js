@@ -40,3 +40,12 @@ function EnviarEmailRecuperacao() {
             }
     }
 }
+
+setTimeout(function() {
+    let alert = document.getElementById('alertTemp');
+    if (alert) {
+        alert.classList.remove('show');
+        alert.classList.add('fade');
+        setTimeout(() => alert.remove(), 500);
+    }
+}, 4000); // Alerta desaparecerá após 4 segundos

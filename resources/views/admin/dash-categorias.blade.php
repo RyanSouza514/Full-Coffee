@@ -1,4 +1,4 @@
-<x-layout-dashboard title="Categorias">
+<x-layout-dashboard title="Cadastro de Categorias">
     <!-- --- Inicio conteudo -->
     <div class="container mt-3">
         <div class="row justify-content-center">
@@ -8,10 +8,6 @@
                         <h4>Cadastro de Categoria</h4>
                     </div>
                     <div class="card-body">
-                        <!-- @if($mensagem = Session::get("sucesso"))
-                            <div class="alert alert-success">{{$mensagem}}</div>
-                        @endif -->
-
                         <form action="{{Route('Categorias.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
@@ -102,45 +98,5 @@
         </div>
     </div>
     <!-- --- FINAL conteudo -->
-
-
-
-
-    <!------- MENSAGEM DE RETORNO PARA USUARIO ------->
-
-    <!-- @if(session('save-success'))
-        <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
-            style="top: 20px; right: 20px; z-index: 9999;">
-            {{ session('save-success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-    @if(session('erro'))
-        <div id="alertTemp" class="alert alert-warning alert-dismissible fade show position-fixed" role="alert"
-            style="top: 20px; right: 20px; z-index: 9999;">
-            {{ session('erro') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
-    @if(session('deleted-success'))
-        <div id="alertTemp" class="alert alert-success alert-dismissible fade show position-fixed" role="alert"
-            style="top: 20px; right: 20px; z-index: 9999;">
-            {{ session('deleted-success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif -->
-
-    <script>
-    // Tornar o alerta flutuante temporário
-    setTimeout(function() {
-        let alert = document.getElementById('alertTemp');
-        if (alert) {
-            alert.classList.remove('show');
-            alert.classList.add('fade');
-            setTimeout(() => alert.remove(), 500);
-        }
-    }, 3000); // Alerta desaparecerá após 3 segundos
-    </script>
-
+     
     </x-layout-dashbord>

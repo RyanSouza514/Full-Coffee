@@ -30,7 +30,7 @@ class UserController extends Controller
         // Tenta autenticar o usuário
         if(Auth::attempt(['email' => $validacao['email'], 'password' => $validacao['password']])){
             $request->session()->regenerate();
-            return redirect()->intended(route("Mensagem.index"));
+            return redirect()->intended(route("dashbord.index"));
         }else{
             return redirect()->back()->with("erro", "E-mail ou senha inválidos");
         }
@@ -55,10 +55,12 @@ class UserController extends Controller
         $user->save();
 
         // Autentica o usuário após o cadastro
-        Auth::attempt(['email' => $validacao['email'], 'password' => $request->password]);
+        // Auth::attempt(['email' => $validacao['email'], 'password' => $request->password]);
 
         //return redirect()->intended(route("admin.dash-usuario"));
-        return view('admin.dash-usuario');
+        // return view('admin.dash-usuario');
+        return redirect()->route('Usuario.index')->with('save-success', 'Usuario cadastrado com sucesso!');
+    
     }
 
     public function deslogar(Request $request){

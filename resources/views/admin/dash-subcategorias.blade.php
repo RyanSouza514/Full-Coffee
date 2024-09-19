@@ -1,4 +1,4 @@
-<x-layout-dashboard title="SubCategoria">
+<x-layout-dashboard title="Cadastro de SubCategoria">
 
     <!-- --- Inicio conteudo -->
     <div class="container mt-3">
@@ -10,13 +10,13 @@
                     </div>
                     <div class="card-body">
 
-                        @if($mensagem = Session::get("sucesso"))
+                        <!-- @if($mensagem = Session::get("sucesso"))
                             <div class="alert alert-success">{{$mensagem}}</div>
                         @endif
 
                         @if($mensagem = Session::get("erro"))
                             <div class="alert alert-danger">{{$mensagem}}</div>
-                        @endif
+                        @endif -->
 
                         <form action="{{Route('SubCategoria.store')}}" method="post" enctype="multipart/form-data">
                             @csrf

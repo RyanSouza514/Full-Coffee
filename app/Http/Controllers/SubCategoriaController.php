@@ -44,7 +44,7 @@ class SubCategoriaController extends Controller
 
         Subcategoria::create($validacao);
         
-        return redirect(route('SubCategoria.index'))->with('sucesso', 'SubCategoria Cadastrada com sucesso!');
+        return redirect(route('SubCategoria.index'))->with('save-success', 'SubCategoria Cadastrada com sucesso!');
     }
 
     public function storeSubCategoriaProduto(Request $request)
@@ -56,7 +56,7 @@ class SubCategoriaController extends Controller
 
         Subcategoria::create($validacao);
         
-        return redirect(route('Produtos.index'))->with('sucesso', 'SubCategoria Cadastrada com sucesso!');
+        return redirect(route('Produtos.index'))->with('save-success', 'SubCategoria Cadastrada com sucesso!');
     }
 
     /**

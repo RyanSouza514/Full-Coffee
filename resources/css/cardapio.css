@@ -119,9 +119,29 @@ header h1 {
 
 .nav-pills .nav-link.active {
     background-color: #5d4037;
-    
     color: #fff;
-    
+}
+
+.custom-overflow::-webkit-scrollbar {
+    height: 10px;  /* Altura da barra de rolagem */
+}
+
+.custom-overflow-Categorias::-webkit-scrollbar-thumb {
+    background-color: #5d4037; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.custom-overflow-Categorias::-webkit-scrollbar-thumb:hover {
+    background-color: #DCB26D; /* Cor ao passar o mouse */
+}
+
+.custom-overflow-SubCategorias::-webkit-scrollbar-thumb {
+    background-color: #DCB26D; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.custom-overflow-SubCategorias::-webkit-scrollbar-thumb:hover {
+    background-color: #5d4037; /* Cor ao passar o mouse */
 }
 
 /* Fim estilização navegação */

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CardapioController;
+use App\Http\Controllers\DashbordController;
 use App\Http\Controllers\MensagemController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\SubCategoriaController;
@@ -21,7 +22,7 @@ Route::get('/', [indexController::class, 'index']);
 Route::resource('/home', indexController::class);
 
 //ROTAS CARDÁPIO
-Route::resource('/cardapio', CardapioController::class);
+Route::get('/cardapio', [CardapioController::class, 'index'])->name('cardapio.index');
 
 
 
@@ -33,21 +34,11 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'loginUser'])->name('login.loginUser');
 Route::get('/logout', [UserController::class, 'deslogar'])->name("deslogar");
 
-//ROTAS TELA DE MENSAGEM
-
-
-
-// Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');
-// Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');
-
-
-//Rotas Cardápio//
-Route::get('/Cardapio', function () {
-    return view('home.cardapio');
-});
 
 
 Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/Dashbord', [DashbordController::class, 'index'])->name('dashbord.index');
 
     Route::resource('/Dashbord/Mensagem', MensagemController::class);
 

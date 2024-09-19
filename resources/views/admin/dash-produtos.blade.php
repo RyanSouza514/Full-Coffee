@@ -10,9 +10,9 @@
                     </div>
                     <div class="card-body">
 
-                        @if($mensagem = Session::get("sucesso"))
+                        <!-- @if($mensagem = Session::get("sucesso"))
                             <div class="alert alert-success">{{$mensagem}}</div>
-                        @endif
+                        @endif -->
 
                         <form action="{{Route('Produtos.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
@@ -320,8 +320,6 @@
         </div>
     </div>
 
-    
-
     <script>
         function buscarSubCategoriaPorCategoria(){
             const categoriaId = document.getElementById('SelectCategoriaId').value
@@ -332,4 +330,4 @@
         }
     </script>
 
-    </x-layout>
+</x-layout>

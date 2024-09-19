@@ -85,7 +85,7 @@ class ProdutosController extends Controller
 
         Produtos::create($validacao);
 
-        return redirect(route('Produtos.index'))->with('sucesso', 'Produto Cadastro com sucesso!');
+        return redirect(route('Produtos.index'))->with('save-success', 'Produto Cadastro com sucesso!');
 
     }
 
