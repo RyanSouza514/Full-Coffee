@@ -202,8 +202,10 @@
 
                                                                     <div class="mb-3">
                                                                         <label for="selecao-arquivo" class="form-label fw-medium">Alterar Imagem</label>
-                                                                        <img src="{{URL::asset('img/cardapio/'.$prod->imagem)}}" alt="" width="100px" height="auto">
+                                                                        <img src="{{URL::asset('img/cardapio/'.$prod->imagem ?: 'img-default.png')}}" alt="" width="100px" height="auto" name="VerificarImg">
                                                                         <input class="form-control" type="file" id="selecao-arquivo" name="imagem">
+                                                                        <!-- {{$subModalEditar->id == $prod->subcategoria_id ? 'selected' : ''}} -->
+                                                                        <!-- $produto['imagem'] = 'img-default.png'; // Define uma imagem padrão -->
                                                                     </div>
 
                                                                     <div class="row">

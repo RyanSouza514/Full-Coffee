@@ -182,9 +182,7 @@ class ProdutosController extends Controller
             $requestImagem->move(public_path('img/cardapio/'), $newImageName);
 
             $imagem = $newImageName;
-        } else {
-            $imagem = 'img-default.png';
-        }
+        }   
         return $imagem;
     }
 }

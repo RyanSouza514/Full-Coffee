@@ -22,6 +22,7 @@
 </head>
 
 <body>
+   
 
     <div class="container-fluid">
         <div class="row flex-nowrap">
@@ -130,7 +131,8 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Sair</a></li>
+                            <li><a class="dropdown-item" href="{{Route('deslogar')}}">Sair</a></li>
+                            <!-- <a class="nav-link active" aria-current="page" >Logout</a> -->
                         </ul>
                     </div>
                 </div>
@@ -170,5 +172,6 @@
         </div>
     @endif
 
+   
 </body>
 </html>

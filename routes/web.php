@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\indexController;
+use GuzzleHttp\Middleware;
+use PHPUnit\Framework\Attributes\Group;
 
 Route::get('/', [indexController::class, 'index']);
 
@@ -27,29 +29,12 @@ Route::resource('/cardapio', CardapioController::class);
 // ------------ CONFIG ROTAS TELA ADMINISTRADOR - SISTEMA FULL COFFEE ------------
 
 // ROTAS TELA DE LOGIN
-Route::get('/login', [UserController::class, 'login'])->name('login.login');
+Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'loginUser'])->name('login.loginUser');
+Route::get('/logout', [UserController::class, 'deslogar'])->name("deslogar");
 
 //ROTAS TELA DE MENSAGEM
-Route::resource('/Dashbord/Mensagem', MensagemController::class);
 
-//ROTAS TELA DE PRODUTOS
-Route::resource('/Dashbord/Produtos', ProdutosController::class);
-Route::post('/Categoria/Criar', [CategoriaController::class,'storeCategoriaProduto'])->name('CriarCategoriaProduto');
-Route::post('/SubCategoria/Criar', [SubCategoriaController::class,'storeSubCategoriaProduto'])->name('CriarSubCategoriaProduto');
-Route::put('/Dashbord/Produtos/edit', [ProdutosController::class, 'update'])->name('Produtos.update');
-
-//ROTAS TELA DE SUBCATEGORIA
-Route::resource('/Dashbord/SubCategoria', SubCategoriaController::class);
-Route::put('/Dashbord/SubCategoria/edit', [SubCategoriaController::class, 'update'])->name('SubCategoria.update');
-
-//ROTAS TELA DE SUBCATEGORIA
-Route::resource('/Dashbord/Categorias', CategoriaController::class);
-Route::put('/Dashbord/Categorias/edit', [CategoriaController::class, 'update'])->name('Categorias.update');
-
-// ROTAS CADASTRO DE USUARIO SISTEMA
-Route::get('/Dashbord/Usuario', [UserController::class, 'index'])->name('Usuario.index');
-Route::post('/Dashbord/Usuario', [UserController::class, 'cadastrarUsuario'])->name('Usuario.cadastrarUsuario');
 
 
 // Route::post('/contato',[ContatoController::class, "contatoPost"])->name('contato');
@@ -62,3 +47,25 @@ Route::get('/Cardapio', function () {
 });
 
 
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::resource('/Dashbord/Mensagem', MensagemController::class);
+
+    //ROTAS TELA DE PRODUTOS
+    Route::resource('/Dashbord/Produtos', ProdutosController::class);
+    Route::post('/Categoria/Criar', [CategoriaController::class, 'storeCategoriaProduto'])->name('CriarCategoriaProduto');
+    Route::post('/SubCategoria/Criar', [SubCategoriaController::class, 'storeSubCategoriaProduto'])->name('CriarSubCategoriaProduto');
+    Route::put('/Dashbord/Produtos/edit', [ProdutosController::class, 'update'])->name('Produtos.update');
+
+    //ROTAS TELA DE SUBCATEGORIA
+    Route::resource('/Dashbord/SubCategoria', SubCategoriaController::class);
+    Route::put('/Dashbord/SubCategoria/edit', [SubCategoriaController::class, 'update'])->name('SubCategoria.update');
+
+    //ROTAS TELA DE SUBCATEGORIA
+    Route::resource('/Dashbord/Categorias', CategoriaController::class);
+    Route::put('/Dashbord/Categorias/edit', [CategoriaController::class, 'update'])->name('Categorias.update');
+
+    // ROTAS CADASTRO DE USUARIO SISTEMA
+    Route::get('/Dashbord/Usuario', [UserController::class, 'index'])->name('Usuario.index');
+    Route::post('/Dashbord/Usuario', [UserController::class, 'cadastrarUsuario'])->name('Usuario.cadastrarUsuario');
+});

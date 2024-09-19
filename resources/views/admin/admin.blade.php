@@ -36,7 +36,7 @@
 
 
                   <div class="d-flex justify-content-start align-items-center">
-                    <img src="../assets/img/logo-login.png" alt="" class="rounded-circle w-25 me-3">
+                    <img src="{{Vite::asset('resources/assets/img/logo-login.png')}}" alt="" class="rounded-circle w-25 me-3">
                     <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                   </div>
 

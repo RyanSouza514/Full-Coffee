@@ -30,7 +30,7 @@ class UserController extends Controller
         // Tenta autenticar o usuário
         if(Auth::attempt(['email' => $validacao['email'], 'password' => $validacao['password']])){
             $request->session()->regenerate();
-            return redirect()->intended(route("admin.dashboard"));
+            return redirect()->intended(route("Mensagem.index"));
         }else{
             return redirect()->back()->with("erro", "E-mail ou senha inválidos");
         }
@@ -65,6 +65,6 @@ class UserController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect(route("admin.admin"));
+        return redirect(route("login"));
     }
 }
