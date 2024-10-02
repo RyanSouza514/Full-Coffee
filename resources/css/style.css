@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Trykker&display=swap');
+
+/* --------- Variáveis de Cores --------- */
+:root {
+    --verde: #8E8E4D;
+    --creme: #DCB26D;
+    --avela: #A2570D;
+    --cafe: #5A2C0F;
+    --preto: #0D0D0D;
+    --marrom:  #291505;
+}
+
+/* --------- Estilização das Fontes --------- */
+
+/* TRYKKER - <p> */
+.trykker-regular {
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* MAITREE - <H2 a H6> */
+.maitree-extralight {
+    font-family: "Maitree", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.maitree-light {
+    font-family: "Maitree", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.maitree-regular {
+    font-family: "Maitree", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.maitree-medium {
+    font-family: "Maitree", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.maitree-semibold {
+    font-family: "Maitree", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.maitree-bold {
+    font-family: "Maitree", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ROBOTO - <H1> */
+.roboto-mono {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>; 
+    font-style: normal; 
+}

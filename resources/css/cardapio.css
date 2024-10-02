@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Trykker&display=swap');
+
+
+/* --------- Personalização do Body --------- */
+body {
+    background-color: #291505;
+    margin: auto;
+}
+
+
+/* --------- Estilizando Títulos e Parágrafos --------- */
+.titulo {
+    font-family: "Maitree", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #DCB26D
+}
+
+.paragrafo {
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #DCB26D;
+}
+
+/* --------- Fim Estilizando Títulos e Parágrafos --------- */
+
+
+/* --------- Personalização do Carrossel --------- */
+
+/* IMG Carrossel */
+img {
+    width: 600px;
+    height: 300px;
+}
+
+.card-img {
+    width: 300px;
+    height: 200px;
+}
+
+
+/* --------- Fim Personalização do Carrossel --------- */
+
+
+/* Estilo para o título da seção */
+.section-title {
+    font-family: "Maitree", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #DCB26D;
+    margin-bottom: 20px;
+}
+
+
+/*Estilo Cardápio*/
+/* Estilização do Header */
+header h1 {
+    font-size: 2rem;
+}
+
+/* Estilo personalizado para o campo de pesquisa */
+#search {
+    margin-left: 5px;
+    margin: auto;
+    border-radius: 25px;
+    /* Borda arredondada */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    padding-left: 2.5rem;
+    /* Ajusta o espaçamento interno para o ícone */
+    border: 1px solid #ced4da;
+    /* Borda leve */
+}
+
+/* Estilo para o ícone dentro do grupo de entrada */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+#search .form-control {
+    padding-right: 2.5rem;
+    width: 300px;
+}
+
+.btn.search-icon {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-left: -1px;
+    
+}
+
+.search-icon svg {
+    color: #DCB26D;
+    width: 30px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+/* Estilização Input Pesquisa */
+
+/* Estilização da Navegação */
+.nav-pills .nav-link {
+    color: #5A2C0F;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.nav-pills .nav-link.active {
+    background-color: #5d4037;
+    color: #fff;
+}
+
+.custom-overflow::-webkit-scrollbar {
+    height: 10px;  /* Altura da barra de rolagem */
+}
+
+.custom-overflow-Categorias::-webkit-scrollbar-thumb {
+    background-color: #5d4037; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.custom-overflow-Categorias::-webkit-scrollbar-thumb:hover {
+    background-color: #DCB26D; /* Cor ao passar o mouse */
+}
+
+.custom-overflow-SubCategorias::-webkit-scrollbar-thumb {
+    background-color: #DCB26D; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.custom-overflow-SubCategorias::-webkit-scrollbar-thumb:hover {
+    background-color: #5d4037; /* Cor ao passar o mouse */
+}
+
+/* Fim estilização navegação */
+
+/* Estilo do Cardápio */
+/* Estilização Menu (Cards) */
+.card-custom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+
+.menu .card {
+    background: #DCB26D;
+   
+    border: 1px solid #291505;
+   
+    border-radius: 5px;
+    
+    margin-bottom: 1rem;
+   
+}
+
+
+.menu .card-body h5 {
+    color: #291505;
+    font-family: "Maitree", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.menu .card-body p {
+    color: #291505;
+    font-family: "Trykker", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-muted {
+    color: #291505;
+    font-family: "Maitree", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.menu .card-body strong {
+    color: #d32f2f;
+    /* Cor vermelha para o texto destacado */
+}
+
+/* Fim Estilização Menu (Cards) */
+
+/* Estilização das Tabs */
+.custom-section {
+    background-color: #291505;
+    border: 10px;
+    border-color: #291505;
+   
+}
+
+.text {
+    font-family: "Maitree", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #DCB26D;
+}
+
+.custom-text {
+    font-family: "Trykker", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #DCB26D;
+}
+
+/* Estilo padrão para abas não selecionadas */
+.nav-tabs {
+    background-color: #DCB26D;
+    border: 1px solid #291505;
+    border-radius: 10px;
+}
+
+/* Estilo para abas padrão */
+.custom-text {
+    color: #291505;
+    background-color: #DCB26D;
+    border: 1px solid #291505;
+}
+
+.custom-text:hover {
+    color: #DCB26D;
+    background-color: #5A2C0F;
+    border: 1px solid #291505;
+}
+
+/* Estilos de Navegação (Tabs) */
+.nav-tabs .nav-link {
+    color: #5A2C0F;
+    background-color: #DCB26D;
+   
+}
+
+/* Estilo da aba ativa */
+.nav-tabs .nav-link.active {
+    color: #DCB26D;
+   
+    background-color: #5A2C0F;
+    
+    border-color: #291505;
+    
+}
+
+/* Fim dos Estilos de Navegação (Tabs) */
+
+/* Estilização de Imagens */
+
+.col-md-4 {
+    padding: 10px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.rounded-start {
+    border-radius: 0.25rem;
+    
+}
+
+/* Adicionando estilo ao contêiner */
+.col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fim estilização de Imagens */
+
